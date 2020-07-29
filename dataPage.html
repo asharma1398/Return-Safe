@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID Project</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .footer-fixed {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 99;
+            margin: 0;
+        }
+
+        #dataResults {
+            padding-bottom: 55px;
+        }
+
+        .collection-item {
+            padding-top: .5em !important;
+            padding-bottom: .5em !important;
+        }
+
+        .collection {
+            margin-top: 1em !important;
+        }
+
+        .navText {
+            padding-left: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-wrapper">
+            <div class="container center">
+                <a href="#" class="flow-text">Today, Tues Jul 28</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container section center" id="dataResults">
+
+        <h3>Today's Checkins</h3>
+
+        <a class="waves-effect waves-light btn-large center valign-wrapper"><span class="left">Add Checkin</span><i
+                class="small material-icons">create</i></a>
+
+        <ul class="collection with-header row">
+            <li class="collection-header col s12">
+                <h4>10:00 AM</h4>
+            </li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">local_pharmacy</i>Temp: 98
+            </li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Cough</li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Headache</li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Congestion</li>
+        </ul>
+
+        <ul class="collection with-header row">
+            <li class="collection-header col s12">
+                <h4>5:00 PM</h4>
+            </li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">local_pharmacy</i>Temp: 99
+            </li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Cough</li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Headache</li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">check</i>Congestion</li>
+            <li class="collection-item valign-wrapper col s6"><i class="small material-icons">masks</i>No Mask</li>
+            <li class="collection-item valign-wrapper col s12">Comments: Forgot mask in library after lunch. Sneezed at
+                help desk.</li>
+        </ul>
+
+    </section>
+
+    <footer class="footer-fixed row">
+        <a href="#" class="btn-large col s6"><span class="left navText">Calender</span><i
+                class="small material-icons">date_range</i></a>
+        <a href="#" class="btn-large col s6"><span class="left navText">Data</span><i
+                class="small material-icons">bar_chart</i></a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
