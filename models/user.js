@@ -35,6 +35,20 @@ const UserSchema = new Schema({
     },
 
     fullName: String,
+
+    locations: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Geolocation"
+        }
+    ],
+
+    checkins: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Checkin"
+        }
+    ]
 });
 
 UserSchema.methods.setFullName = function() {
