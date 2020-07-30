@@ -49,7 +49,7 @@
 
         <h3>Today's Checkins</h3>
 
-        <a class="waves-effect waves-light btn-large center valign-wrapper"><span class="left">Add Checkin</span><i
+        <a class="waves-effect waves-light btn-large center valign-wrapper" id="addCheckin"><span class="left">Add Checkin</span><i
                 class="small material-icons">create</i></a>
 
         <ul class="collection with-header row">
@@ -79,7 +79,7 @@
 
     </section>
 
-    <section class="container section" id="dataForm">
+    <section class="container section hide" id="dataForm">
 
         <h4 class="center">Do A Quick Checkin!</h4>
 
@@ -166,11 +166,27 @@
     <footer class="footer-fixed row">
         <a href="#" class="btn-large col s6"><span class="left navText">Calender</span><i
                 class="small material-icons">date_range</i></a>
-        <a href="#" class="btn-large col s6"><span class="left navText">Data</span><i
+        <a href="#" class="btn-large col s6" id="dataBtn"><span class="left navText">Data</span><i
                 class="small material-icons">bar_chart</i></a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const dataFormEl = document.getElementById("dataForm");
+        const dataResultsEl = document.getElementById("dataResults");
+        const addCheckin = document.getElementById("addCheckin");
+        const dataBtn = document.getElementById("dataBtn");
+
+        addCheckin.addEventListener("click", function () {
+            dataResultsEl.classList.add("hide");
+            dataFormEl.classList.remove("hide");
+        });
+
+        dataBtn.addEventListener("click", function () {
+            dataResultsEl.classList.remove("hide");
+            dataFormEl.classList.add("hide");
+        });
+    </script>
 </body>
 
 </html>
