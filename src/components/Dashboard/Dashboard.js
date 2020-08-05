@@ -6,13 +6,24 @@ import Checkins from "../Checkins/Checkins";
 
 class Dashboard extends React.Component {
 
+    state={
+        showData: false
+    }
+
+    displayData = () => {
+        this.setState({ showData: true });
+    }
+
+    displayForm = () => {
+        this.setState({ showData: false });
+    }
+
     render() {
         return (
             <>
                 <Header />
-                <Form />
-                <Checkins />
-                <Footer />
+                {this.state.showData ? <Checkins displayForm={this.displayForm}/> : <Form />}
+                <Footer displayData={this.displayData} />
             </>
         );
     }
