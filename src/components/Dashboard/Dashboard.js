@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 class Dashboard extends React.Component {
 
@@ -7,6 +8,7 @@ class Dashboard extends React.Component {
         return (
             <>
                 <Header />
+                <Footer />
             </>
         );
     }
