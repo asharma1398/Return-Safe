@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Form from "../Form/Form";
+import Checkins from "../Checkins/Checkins";
 
 class Dashboard extends React.Component {
 
@@ -10,6 +11,7 @@ class Dashboard extends React.Component {
             <>
                 <Header />
                 <Form />
+                <Checkins />
                 <Footer />
             </>
         );
