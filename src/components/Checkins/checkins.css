@@ -1,0 +1,12 @@
+#dataResults {
+    padding-bottom: 5em;
+}
+
+#dataResults ul {
+    margin-top: 1em !important;
+}
+
+#dataResults li {
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+}
