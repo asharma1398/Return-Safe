@@ -8,7 +8,7 @@ export default function Checkins(props) {
         <section className="container section center" id="dataResults">
             <h3>Checkins</h3>
 
-            <Button id="addCheckin"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
+            <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
 
             {props.checkins.map(checkin => {
                 return <Collection header={new Date(checkin.Date).toLocaleTimeString()} className="row">{
