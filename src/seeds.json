@@ -1,0 +1,28 @@
+{
+    "school": "Upenn",
+    "users": [
+        {
+            "firstName": "Susan",
+            "lastName": "Holland",
+            "email": "segh@fastmail.com",
+            "password": "password",
+            "userCreated": "",
+            "checkins": [
+                {
+                    "cough": true,
+                    "headache": true,
+                    "congestion": true,
+                    "temperature": 98
+                },
+
+                {
+                    "cough": true,
+                    "headache": true,
+                    "congestion": true,
+                    "temperature": 99,
+                    "comments": "Forgot mask in library after lunch. Sneezed at help desk."
+                }
+            ]
+        }
+    ]
+}
