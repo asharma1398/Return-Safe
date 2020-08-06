@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     state={
         currentUser: Data.users[0],
         checkins: Data.users[0].checkins,
+        currentDate: new Date(),
         showData: false
     }
 
@@ -24,7 +25,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <>
-                <Header />
+                <Header date={this.state.currentDate} />
                 {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} /> : <Form />}
                 <Footer displayData={this.displayData} />
             </>
