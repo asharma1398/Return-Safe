@@ -17,7 +17,7 @@ export default function Checkins(props) {
                             return <CollectionItem className="valign-wrapper col s12">{item}: {checkin[item]}</CollectionItem>
                         } else if (item !== "Date") {
                             return <CollectionItem className="valign-wrapper col s6">
-                                <i className="small material-icons">{item === "Temp" ? "local_pharmacy" : "check"}</i>{item}: {checkin[item]}
+                                <i className="small material-icons">{item === "Temp" ? "local_pharmacy" : "check"}</i>{item} {checkin[item]}
                                 </CollectionItem>
                         }
                     })}</Collection>
