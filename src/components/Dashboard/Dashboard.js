@@ -7,7 +7,7 @@ import Data from "../../seeds.json";
 
 class Dashboard extends React.Component {
 
-    state={
+    state = {
         currentUser: Data.users[0],
         checkins: Data.users[0].checkins,
         currentDate: new Date(),
@@ -26,7 +26,9 @@ class Dashboard extends React.Component {
         return (
             <>
                 <Header date={this.state.currentDate} />
-                {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} /> : <Form />}
+                <main className="container row">
+                    {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} /> : <Form />}
+                </main>
                 <Footer displayData={this.displayData} />
             </>
         );

@@ -5,7 +5,7 @@ import "./form.css";
 
 function Form() {
     return (
-        <section className="container section" id="dataForm">
+        <section className="section col s12 l6" id="dataForm">
 
             <h4 className="center">Do A Quick Checkin!</h4>
 
@@ -91,7 +91,7 @@ function Form() {
                     </Col>
 
                     <Col s={12} className="center">
-                        <Button>Submit</Button>
+                        <Button className="red darken-4">Submit</Button>
                     </Col>
 
                 </Row>

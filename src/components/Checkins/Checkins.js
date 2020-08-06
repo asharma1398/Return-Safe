@@ -5,7 +5,7 @@ import "./checkins.css";
 
 export default function Checkins(props) {
     return (
-        <section className="container section center" id="dataResults">
+        <section className="section center col s12 l6" id="dataResults">
             <h3>Checkins</h3>
 
             <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
