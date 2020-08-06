@@ -9,18 +9,20 @@
             "userCreated": "",
             "checkins": [
                 {
-                    "cough": true,
-                    "headache": true,
-                    "congestion": true,
-                    "temperature": 98
+                    "Time": "10 AM",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temperature": 98
                 },
 
                 {
-                    "cough": true,
-                    "headache": true,
-                    "congestion": true,
-                    "temperature": 99,
-                    "comments": "Forgot mask in library after lunch. Sneezed at help desk."
+                    "Time": "5 PM",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temperature": 99,
+                    "Comments": "Forgot mask in library after lunch. Sneezed at help desk."
                 }
             ]
         }
