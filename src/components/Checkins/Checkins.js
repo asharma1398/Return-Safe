@@ -1,6 +1,6 @@
 import React from "react";
 import 'materialize-css';
-import { Button, Row, Col, Collection, CollectionItem } from 'react-materialize';
+import { Button, Collection, CollectionItem } from 'react-materialize';
 import "./checkins.css";
 
 export default function Checkins(props) {
