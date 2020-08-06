@@ -9,19 +9,19 @@
             "userCreated": "",
             "checkins": [
                 {
-                    "Time": "10 AM",
+                    "Date": "2020-08-06T14:00:00Z",
                     "Cough": true,
                     "Headache": true,
                     "Congestion": true,
-                    "Temperature": 98
+                    "Temp": 98
                 },
 
                 {
-                    "Time": "5 PM",
+                    "Date": "2020-08-06T21:00:00Z",
                     "Cough": true,
                     "Headache": true,
                     "Congestion": true,
-                    "Temperature": 99,
+                    "Temp": 99,
                     "Comments": "Forgot mask in library after lunch. Sneezed at help desk."
                 }
             ]
