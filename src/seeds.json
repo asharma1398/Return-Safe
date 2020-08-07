@@ -23,6 +23,11 @@
                     "Congestion": true,
                     "Temp": 99,
                     "Comments": "Forgot mask in library after lunch. Sneezed at help desk."
+                },
+
+                {
+                    "Date": "2020-08-07T14:00:00Z",
+                    "Congestion": true
                 }
             ]
         }

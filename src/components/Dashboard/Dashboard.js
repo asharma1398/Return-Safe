@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
             <>
                 <Header date={this.state.currentDate} />
                 <main className="container row">
-                    {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} /> : this.state.showForm ? <Form /> : <div></div>}
+                    {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} currentDate={this.state.currentDate} /> : this.state.showForm ? <Form /> : <div></div>}
                     <Calender showCalender={this.state.showCalender} />
                 </main>
                 <Footer displayData={this.displayData} displayCalender={this.displayCalender} />

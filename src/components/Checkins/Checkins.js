@@ -11,16 +11,18 @@ export default function Checkins(props) {
             <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
 
             {props.checkins.map(checkin => {
-                return <Collection header={new Date(checkin.Date).toLocaleTimeString()} className="row">{
-                    Object.keys(checkin).map((item) => {
-                        if (item !== "Date" && item === "Comments") {
-                            return <CollectionItem className="valign-wrapper col s12">{item}: {checkin[item]}</CollectionItem>
-                        } else if (item !== "Date") {
-                            return <CollectionItem className="valign-wrapper col s6">
-                                <i className="small material-icons">{item === "Temp" ? "local_pharmacy" : "check"}</i>{item} {checkin[item]}
+                if (new Date(checkin.Date).toDateString() === props.currentDate.toDateString()) {
+                    return <Collection header={new Date(checkin.Date).toLocaleTimeString()} className="row">{
+                        Object.keys(checkin).map((item) => {
+                            if (item !== "Date" && item === "Comments") {
+                                return <CollectionItem className="valign-wrapper col s12">{item}: {checkin[item]}</CollectionItem>
+                            } else if (item !== "Date") {
+                                return <CollectionItem className="valign-wrapper col s6">
+                                    <i className="small material-icons">{item === "Temp" ? "local_pharmacy" : "check"}</i>{item} {checkin[item]}
                                 </CollectionItem>
-                        }
-                    })}</Collection>
+                            }
+                        })}</Collection>
+                }
             })}
 
         </section>
