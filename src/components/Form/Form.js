@@ -3,9 +3,9 @@ import 'materialize-css';
 import { Button, Row, Col, Checkbox } from 'react-materialize';
 import "./form.css";
 
-function Form() {
+function Form(props) {
     return (
-        <section className="section col s12 l6" id="dataForm">
+        <section className="section col s12 l6 center" id="dataForm">
 
             <h4 className="center">Do A Quick Checkin!</h4>
 
@@ -98,6 +98,7 @@ function Form() {
 
             </form>
 
+            <Button className="hide-on-med-and-down btn-large red darken-4" onClick={props.displayData}>Show Data</Button>
         </section>
     );
 }
