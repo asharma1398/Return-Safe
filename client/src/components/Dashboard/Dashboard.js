@@ -7,14 +7,13 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Form from "../Form/Form";
 import Checkins from "../Checkins/Checkins";
-// import Data from "../../scripts/seeds";
 import Calendar from "../Calendar/Calendar";
 
 class Dashboard extends React.Component {
 
     state = {
-        // currentUser: Data.users[0],
-        // checkins: Data.users[0].checkins,
+        currentUser: "",
+        checkins: [],
         currentDate: new Date(),
         showData: false,
         showForm: true,
@@ -40,7 +39,7 @@ class Dashboard extends React.Component {
             <>
                 <Header date={this.state.currentDate} />
                 <main className="container row">
-                    {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} currentDate={this.state.currentDate} /> : this.state.showForm ? <Form displayData={this.displayData} /> : <div></div>}
+                    {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} currentDate={this.state.currentDate} /> : this.state.showForm ? <Form displayData={this.displayData} checkins={this.state.checkins} /> : <div></div>}
                     <Calendar showCalendar={this.state.showCalendar} />
                 </main>
                 <Footer displayData={this.displayData} displayCalendar={this.displayCalendar} />
