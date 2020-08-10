@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url("../../assets/images/redWatercolorBackground.jpg") !important;
+    background-repeat: no-repeat !important;
+    height: 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background: #fff;
+}
+
+a, b, h5 {
+    color: #000080;
+}
+
+div.container {
+    margin-top: 50px;
+}
+
+.z-depth-1.grey.lighten-4.row {
+    display: inline-block; 
+    padding: 50px 60px 0px 60px; 
+    border: 1px solid #EEE;
+}
+
+.welcomeText {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000080;
+    font-weight: bold;
+}
+
+.loginText, .registerText {
+    color: #EEE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.registerText {
+    color: #B71C1C;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+    color: #B71C1C !important;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+    border-bottom: 2px solid #B71C1C !important;
+    box-shadow: none !important;
+}
