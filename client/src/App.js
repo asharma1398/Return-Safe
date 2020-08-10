@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -12,6 +13,8 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Logout from "./components/Logout/Logout";
+
 
 // Checks the token (JWT) in order to keep the user logged in.
 if (localStorage.jwtToken) {
@@ -31,6 +34,7 @@ const currentTime = Date.now() / 1000; // to get in milliseconds
   }
 }
 
+
 class App extends Component {
   render() {
     return (
@@ -42,6 +46,7 @@ class App extends Component {
         <Route exact path="/login" component={Login} />
         <Switch>
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/logout" component={Logout} />
         </Switch>
       </div>
     </Router>
