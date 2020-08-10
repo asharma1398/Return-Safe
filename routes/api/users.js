@@ -13,7 +13,7 @@ const validateLoginInput = require("../../validation/login");
 // Loads User model.
 const User = require("../../models/User");
 
-// Register route: Pulls in the `errors` and `isValid` variables from our `validateRegisterInput(req.body)` function and checks the input validation.
+// Register route: Pulls the `errors` and `isValid` variables from our `validateRegisterInput(req.body)` function and checks the input validation.
 router.post("/register", (req, res) => {
     // Form validation.
     const {errors, isValid } = validateRegisterInput(req.body);
@@ -50,7 +50,7 @@ router.post("/register", (req, res) => {
     });
 });
 
-// Login route: Pulls in the `errors` and `isValid` variables from our `validateRegisterInput(req.body)` function and checks the input validation.
+// Login route: Pulls the `errors` and `isValid` variables from our `validateRegisterInput(req.body)` function and checks the input validation.
 router.post("/login", (req, res) => {
     // Form validation.
     const { errors, isValid } = validateLoginInput(req.body);
