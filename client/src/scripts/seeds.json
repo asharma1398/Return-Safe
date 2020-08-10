@@ -1,0 +1,51 @@
+{
+    "school": "Upenn",
+    "users": [
+        {
+            "firstName": "Susan",
+            "lastName": "Holland",
+            "email": "segh@fastmail.com",
+            "password": "password",
+            "userCreated": "",
+            "checkins": [
+                {
+                    "Date": "2020-08-06T14:00:00Z",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temp": 98
+                },
+
+                {
+                    "Date": "2020-08-06T21:00:00Z",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temp": 99,
+                    "Comments": "Forgot mask in library after lunch. Sneezed at help desk."
+                },
+
+                {
+                    "Date": "2020-08-07T14:00:00Z",
+                    "Congestion": true
+                },
+                {
+                    "Date": "2020-08-08T14:00:00Z",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temp": 98
+                },
+
+                {
+                    "Date": "2020-08-08T21:00:00Z",
+                    "Cough": true,
+                    "Headache": true,
+                    "Congestion": true,
+                    "Temp": 99,
+                    "Comments": "Forgot mask in library after lunch. Sneezed at help desk."
+                }
+            ]
+        }
+    ]
+}
