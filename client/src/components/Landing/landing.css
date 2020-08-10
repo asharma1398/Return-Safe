@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url("../../assets/images/redWatercolorBackground.jpg") !important;
+    background-repeat: no-repeat !important;
+    height: 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background: #fff;
+}
+
+a, b, h5 {
+    color: #000080;
+}
+
+div.container {
+    margin-top: 50px;
+}
