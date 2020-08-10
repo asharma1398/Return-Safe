@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url("../../assets/images/redWatercolorBackground.jpg") !important;
+    background-image: url("../../assets/images/redInkBackground.jpg") !important;
     background-repeat: no-repeat !important;
     height: 100% !important;
     background-position: center !important;
@@ -27,12 +27,12 @@ div.container {
 
 .welcomeText {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000080;
+    color: #B71C1C;
     font-weight: bold;
 }
 
 .loginText, .registerText {
-    color: #EEE;
+    color: #B71C1C;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
