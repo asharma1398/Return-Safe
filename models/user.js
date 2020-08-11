@@ -19,8 +19,24 @@ const UserSchema = new Schema ({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    locations: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Geolocation"
+        }
+    ],
+    checkins: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Checkin"
+        }
+    ]
 });
 
 // Exports the User model, so that it can be accessed outside of the file.
-module.exports = User = mongoose.model("users", UserSchema);
+// module.exports = User = mongoose.model("users", UserSchema);
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
