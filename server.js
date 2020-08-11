@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 const db = require("./config/keys").MONGODB_URI;
 
 // MongoDB connection using the mongoose dependency.
-mongoose.connect(db, { useNewUrlParser: true }).then (() => console.log("Successfully made connection to MongoDB."))
+mongoose.connect("mongodb://localhost/covidtracker", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Successfully made connection to MongoDB."))
 .catch(err => console.log(err));
 
 // Passport middleware.
