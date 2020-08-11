@@ -1,6 +1,6 @@
 import React from "react";
 import 'materialize-css';
-import { Button, Collection, CollectionItem } from 'react-materialize';
+import { Button, Collection, CollectionItem, Icon } from 'react-materialize';
 import "./checkins.css";
 
 export default function Checkins(props) {
@@ -10,7 +10,7 @@ export default function Checkins(props) {
 
             <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
 
-            {props.checkins.map(checkin => {
+            {props.checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : props.checkins.map(checkin => {
                 if (new Date(checkin.Date).toDateString() === props.currentDate.toDateString()) {
                     return <Collection header={new Date(checkin.Date).toLocaleTimeString()} className="row">{
                         Object.keys(checkin).map((item) => {
