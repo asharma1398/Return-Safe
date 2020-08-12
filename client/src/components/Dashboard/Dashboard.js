@@ -32,6 +32,10 @@ class Dashboard extends React.Component {
         this.setState({ showCalendar: true, showData: false, showForm: false });
     }
 
+    onChange = (date) => {
+        this.setState({ currentDate: date })
+    }
+
     render() {
         const { user } = this.props.auth;
 
@@ -40,7 +44,7 @@ class Dashboard extends React.Component {
                 <Header date={this.state.currentDate} />
                 <main className="container row">
                     {this.state.showData ? <Checkins displayForm={this.displayForm} checkins={this.state.checkins} currentDate={this.state.currentDate} /> : this.state.showForm ? <Form displayData={this.displayData} checkins={this.state.checkins} /> : <div></div>}
-                    <Calendar showCalendar={this.state.showCalendar} />
+                    <Calendar showCalendar={this.state.showCalendar} currentDate={this.state.currentDate} onChange={this.onChange}/>
                 </main>
                 <Footer displayData={this.displayData} displayCalendar={this.displayCalendar} />
             </>
