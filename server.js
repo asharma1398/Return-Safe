@@ -3,8 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-
-const users = require("./routes/api/users");
+const routes = require("./routes");
 
 // Initializes the application using the express dependency.
 const app = express();
@@ -28,7 +27,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users", users);
+app.use(routes);
 
 // Sets the port for the server to run on.
 const PORT = process.env.PORT || 5000;
