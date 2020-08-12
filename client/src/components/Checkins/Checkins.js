@@ -13,11 +13,7 @@ export default function Checkins(props) {
 
     function loadCheckins() {
         // Test API call with get all checkins from current user and log to console (modify later to be only from currentDate)
-        API.getCheckins()
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => console.log(err));
+
     }
 
     return (
