@@ -14,6 +14,7 @@ export default function Calendar(props) {
                 <ReactCal
                     onChange={props.onChange}
                     value={props.currentDate}
+                    maxDate={new Date()}
                 />
             </div>
         </section>
