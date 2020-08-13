@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default {
-    saveCheckin: function(checkinData) {
-        return axios.post("/api/checkins", checkinData);
+    saveCheckin: function(id, checkinData) {
+        return axios.post("/api/checkins/" + id, checkinData);
     },
     find: function(id) {
         return axios.get("/api/checkins/" + id);
