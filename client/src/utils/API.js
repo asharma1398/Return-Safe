@@ -6,5 +6,8 @@ export default {
     },
     find: function() {
         return axios.get("/api/checkins");
+    },
+    findByDate: function(date) {
+        return axios.get("/api/checkins/" + date);
     }
 }
