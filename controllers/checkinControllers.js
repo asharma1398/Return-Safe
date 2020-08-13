@@ -9,7 +9,7 @@ module.exports = {
             .then(checkin => {
                 console.log(checkin);
 
-                db.User.findOneAndUpdate({ name: "Zach"}, { checkins: [checkin]})
+                db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.params.id)}, { $push: {checkins: checkin}})
                     .then(user => {
                         console.log(user);
                         res.json(user);
