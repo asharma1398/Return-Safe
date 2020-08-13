@@ -36,7 +36,7 @@ export default function Checkins(props) {
                 if (new Date(checkin.date).toDateString() === props.currentDate.toDateString()) {
                     return <Collection header={new Date(checkin.date).toLocaleTimeString()} className="row">{
                         Object.keys(checkin).map((item) => {
-                            console.log(item);
+
                             if (checkin[item] && item !== "date" && item !== "_id") {
                                 switch (item) {
                                     case "cough":
