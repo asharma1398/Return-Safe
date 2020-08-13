@@ -5,4 +5,7 @@ router.route("/")
     .post(checkinController.create)
     .get(checkinController.find);
 
+router.route("/:date")
+    .get(checkinController.findbyDate);
+    
 module.exports = router;
