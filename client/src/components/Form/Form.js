@@ -3,8 +3,11 @@ import 'materialize-css';
 import { Button, Row, Col, Checkbox } from 'react-materialize';
 import "./form.css";
 import API from "../../utils/API";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 function Form(props) {
+    const { user } = props.auth;
     const [checkinForm, setCheckinForm] = useState({
         cough: false,
         shortnessOfBreath: false,
@@ -46,7 +49,7 @@ function Form(props) {
 
         console.log(checkinForm);
 
-        API.saveCheckin(checkinForm)
+        API.saveCheckin(user.id, checkinForm)
             .then(res => {
                 console.log("checkin saved!");
             })
@@ -152,4 +155,14 @@ function Form(props) {
     );
 }
 
-export default Form;
+Form.propTypes = {
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps
+  )(Form);
