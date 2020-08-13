@@ -21,19 +21,15 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     find: function (req, res) {
-        console.log(req.params.id);
         db.User
             .find({ _id: mongoose.Types.ObjectId(req.params.id)})
-            .populate("checkins")
+            .populate({
+                path: "checkins",
+                match: { date: { $gte: req.params.lowDate, $lte: req.params.highDate }}
+            })
             .then(user => {
                 console.log(user)
                 res.json(user)})
             .catch(err => res.status(422).json(err));
     }
-    // findbyDate: function (req, res) {
-    //     db.Checkin
-    //         .find({ date: req.params.data})
-    //         .then(checkins => res.json(checkins))
-    //         .catch(err => res.status(422).json(err));
-    // }
 };
