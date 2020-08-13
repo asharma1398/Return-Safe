@@ -10,19 +10,12 @@ function Checkins(props) {
     const [checkins, setCheckins] = useState([]);
     const { user } = props.auth;
     useEffect(() => {
-        // Potential version of find function with query to find matching dates
-        // let day = props.currentDate.toDateString();
-        // console.log(day);
-        // API.findByDate(day)
-        // .then(res => {
-        //     console.log(res.data);
-        //     setCheckins(res.data);
-        // })
-        // .catch(err => console.log(err));
 
-        // Function to load checkins (should be updated to be only current user)
-        console.log(user);
-        API.find(user.id)
+        let lowDate = new Date(props.currentDate.toDateString());
+        let date = new Date(props.currentDate);
+        let highDate = new Date(date.setHours(23,59,59,999));
+
+        API.find(user.id, lowDate, highDate)
             .then(res => {
                 if (res.data[0].checkins) {
                 setCheckins(res.data[0].checkins);
@@ -38,7 +31,7 @@ function Checkins(props) {
             {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>}
 
             {checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : checkins.map(checkin => {
-                if (new Date(checkin.date).toDateString() === props.currentDate.toDateString()) {
+
                     return <Collection header={new Date(checkin.date).toLocaleTimeString()} className="row">{
                         Object.keys(checkin).map((item) => {
 
@@ -65,7 +58,7 @@ function Checkins(props) {
                             }
                         })
                     }</Collection>
-                }
+
             })}
 
         </section>
