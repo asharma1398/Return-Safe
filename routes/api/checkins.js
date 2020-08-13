@@ -5,6 +5,7 @@ router.route("/")
     .post(checkinController.create)
 
 router.route("/:id")
-    .get(checkinController.find);
+    .get(checkinController.find)
+    .post(checkinController.create);
 
 module.exports = router;
