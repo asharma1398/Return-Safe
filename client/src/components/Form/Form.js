@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import 'materialize-css';
 import { Button, Row, Col, Checkbox } from 'react-materialize';
 import "./form.css";
+import API from "../../utils/API";
 
 function Form(props) {
     const [checkinForm, setCheckinForm] = useState({
-        date: props.currentDate,
         cough: false,
         shortnessOfBreath: false,
         fatigue: false,
@@ -45,6 +45,12 @@ function Form(props) {
         event.preventDefault();
 
         console.log(checkinForm);
+
+        API.saveCheckin(checkinForm)
+            .then(res => {
+                console.log("checkin saved!");
+            })
+            .catch(err => console.log(err));
     }
 
     return (
