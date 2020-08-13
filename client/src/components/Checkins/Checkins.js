@@ -35,7 +35,7 @@ function Checkins(props) {
         <section className="section center col s12 l6" id="dataResults">
             <h3>Checkins</h3>
 
-            <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
+            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>}
 
             {checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : checkins.map(checkin => {
                 if (new Date(checkin.date).toDateString() === props.currentDate.toDateString()) {
