@@ -8,7 +8,7 @@ export default function Calendar(props) {
     return (
 
         <div>
-        <section className={props.showCalendar ? "center col s12 l6" : "center col s12 l6 hide-on-med-and-down"}>
+        <section className={props.showCalendar ? "center" : "center hide-on-med-and-down"}>
             
             <div>
                 <ReactCal
