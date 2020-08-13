@@ -141,7 +141,7 @@ function Form(props) {
 
             </form>
 
-            {props.checkins.length > 0 && <Button className="hide-on-med-and-down btn-large red darken-4" onClick={props.displayData}>Show Data</Button>}
+            <Button className="hide-on-med-and-down btn-large red darken-4" onClick={props.displayData}>Show Data</Button>
         </section>
     );
 }
