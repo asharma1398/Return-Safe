@@ -8,4 +8,7 @@ router.route("/:id")
     .get(checkinController.find)
     .post(checkinController.create);
 
+router.route("/:id/:lowDate/:highDate")
+    .get(checkinController.find)
+
 module.exports = router;
