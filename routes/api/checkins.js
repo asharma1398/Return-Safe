@@ -3,9 +3,9 @@ const checkinController = require("../../controllers/checkinControllers");
 
 router.route("/")
     .post(checkinController.create)
-    .get(checkinController.find);
 
-router.route("/:date")
-    .get(checkinController.findbyDate);
-    
+router.route("/:id")
+    .get(checkinController.find)
+    .post(checkinController.create);
+
 module.exports = router;

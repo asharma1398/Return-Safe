@@ -3,10 +3,12 @@ import 'materialize-css';
 import { Button, Collection, CollectionItem, Icon } from 'react-materialize';
 import "./checkins.css";
 import API from "../../utils/API";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-export default function Checkins(props) {
+function Checkins(props) {
     const [checkins, setCheckins] = useState([]);
-
+    const { user } = props.auth;
     useEffect(() => {
         // Potential version of find function with query to find matching dates
         // let day = props.currentDate.toDateString();
@@ -19,9 +21,12 @@ export default function Checkins(props) {
         // .catch(err => console.log(err));
 
         // Function to load checkins (should be updated to be only current user)
-        API.find()
+        console.log(user);
+        API.find(user.id)
             .then(res => {
-                setCheckins(res.data);
+                if (res.data[0].checkins) {
+                setCheckins(res.data[0].checkins);
+                }
             })
             .catch(err => console.log(err));
     }, []);
@@ -30,7 +35,7 @@ export default function Checkins(props) {
         <section className="section center col s12 l6" id="dataResults">
             <h3>Checkins</h3>
 
-            <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>
+            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>}
 
             {checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : checkins.map(checkin => {
                 if (new Date(checkin.date).toDateString() === props.currentDate.toDateString()) {
@@ -66,3 +71,15 @@ export default function Checkins(props) {
         </section>
     )
 }
+
+Checkins.propTypes = {
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps
+  )(Checkins);
