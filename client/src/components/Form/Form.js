@@ -138,7 +138,7 @@ function Form(props) {
                     </Col>
 
                     <Col s={3} className="input-field">
-                        <input placeholder="98.6" id="temp" type="text" className="validate" name="temperature" onChange={handleInputChange} />
+                        <input placeholder="98.6" id="temp" type="number" className="validate" name="temperature" onChange={handleInputChange} />
                         <label htmlFor="temp">Temperature</label>
                     </Col>
 
