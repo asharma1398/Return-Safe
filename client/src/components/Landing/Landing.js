@@ -14,15 +14,10 @@ render() {
         <h4>Creating a community of trust will be paramount when adjusting to our new way of life.</h4>
         <Link
                 to="/register"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn" id="getStartedButton"
+                className="btn waves-effect waves red-lighten-2" id="getStartedButton"
               >
-                Start
-              </Link>
+              Get Started
+        </Link>
         </div>
         </div>
   </section>

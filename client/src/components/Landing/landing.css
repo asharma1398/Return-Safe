@@ -3,16 +3,16 @@
 body {
     padding: 0;
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .intro {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     margin: auto;
-    background: url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg"); 
     display: table;
     top:0;
+    background: url("https://images.pexels.com/photos/3719630/pexels-photo-3719630.jpeg"); 
     background-size: cover;
 }
 
@@ -39,10 +39,8 @@ body {
 #getStartedButton {
     font-family: "Montserrat";
     color: white;
-    font-size: 135%;
-    padding: 10px 20px;
-    border: solid #036A81 3px;
-    background-color: transparent;
+    font-size: 150%;
+    padding: 20px;
 }
 
 .content h4 {
