@@ -79,12 +79,21 @@ function Map(props) {
         
         API.getLocations(user.id, lowDate, highDate)
             .then(res => {
-                console.log(res)
-                const latitudeness = (res.data[0].locations.latitude.reduce((a, b) => (a + b)) / res.length);
-                const longitudeness = (res.data[0].locations.longitude.reduce((a, b) => (a + b)) / res.length);
-
-                setLocation(res.data[0].locations);
+                console.log(res.data[0].locations.length)
+                var latitudeness = 0
+                var longitudeness = 0
+                
+                for(var i = 0; i < res.data[0].locations.length; i++){
+                   longitudeness =  res.data[0].locations[i].longitude + longitudeness
+                   latitudeness =  res.data[0].locations[i].latitude + latitudeness
+                }
+                
                 setCenter({longitudeness: longitudeness,  latitudeness: latitudeness});
+                setLocation(res.data[0].locations);
+               
+               
+        
+               
             
 
             })
@@ -103,11 +112,12 @@ function Map(props) {
     }}
                 defaultZoom={9}
             >
+                
                 {mapping.map(location =>
                     
                     <Marker
                          onClick = {() =>loadBox(location._id, location.longitude, location.latitude)}
-
+                         
                         
                     
                         lat={location.lat}
