@@ -1,20 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-image: url("../../assets/images/blueInkBackground.jpg") !important;
-    background-repeat: no-repeat !important;
-    height: 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background: #fff;
+    padding: 0;
+    height: 100%;
+    width: 100%
 }
 
-a, b, h5 {
-    color: #000080;
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url("https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg"); 
+    display: table;
+    top:0;
+    background-size: cover;
 }
 
-div.container {
-    margin-top: 50px;
+.intro .inner {
+   display: table-cell;
+   vertical-align: middle;
+   width: 100%;
+   max-width: none;
+}
+
+.content {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content h1 {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    text-shadow: 0px 0px 300px #000;
+    font-size: 500%;
+}
+
+#getStartedButton {
+    font-family: "Montserrat";
+    color: white;
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid #036A81 3px;
+    background-color: transparent;
+}
+
+.content h4 {
+    font-family: "Montserrat";
+    color: white;
+    text-shadow: 0px 0px 300px #000;
+    font-size: 200%;
 }

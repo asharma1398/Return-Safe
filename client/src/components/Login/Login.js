@@ -55,20 +55,20 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-        <>
-        <center>
+        <div id="background">
+        <center id="center">
       <div className="container">
         <div className="z-depth-1 grey lighten-4 row">
 
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
-            <div className='row'>
-              <div className='col s12'>
+            <div className="row">
+              <div className="col s12">
               <span className="welcomeText">Hello, again! Please log in.</span>
               </div>
             </div>
 
-            <div className='row'>
-              <div className='input-field col s12'>
+            <div className="row">
+              <div className="input-field col s12">
               <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -87,8 +87,8 @@ class Login extends Component {
               </div>
             </div>
 
-            <div className='row'>
-              <div className='input-field col s12'>
+            <div className="row">
+              <div className="input-field col s12">
               <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -108,19 +108,15 @@ class Login extends Component {
             </div>
 
             <br />
-            <center>
-              <div className='row'>
-                <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect red darken-4' id="loginButton">Login</button>
+              <div className="row">
+                <button type="submit" name="btn_login" className="col s12 btn btn-large waves-effect red darken-4" id="loginButton">Login</button>
               </div>
-            </center>
           </form>
         </div>
       </div>
       <p className="loginText">Don't have an account? <Link to="/register">Register here.</Link></p>
       </center>
-    <div className="section"></div>
-    <div className="section"></div>
-</>
+</div>
     )         
   }
 }

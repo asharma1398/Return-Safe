@@ -24,7 +24,6 @@ export default function Checkins(props) {
                         })}</Collection>
                 }
             })}
-
         </section>
     )
 }

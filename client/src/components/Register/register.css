@@ -1,4 +1,4 @@
-body {
+/* body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -54,4 +54,4 @@ div.container {
 .input-field input[type=password]:focus {
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
-}
+} */

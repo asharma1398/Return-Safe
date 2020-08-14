@@ -5,6 +5,7 @@ import "./form.css";
 
 function Form(props) {
     return (
+        <div id="background">
         <section className="section col s12 l6 center" id="dataForm">
 
             <h4 className="center">Do A Quick Checkin!</h4>
@@ -100,6 +101,7 @@ function Form(props) {
 
             {props.checkins.length > 0 && <Button className="hide-on-med-and-down btn-large red darken-4" onClick={props.displayData}>Show Data</Button>}
         </section>
+        </div>
     );
 }
 
