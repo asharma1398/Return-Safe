@@ -22,7 +22,7 @@ function Checkins(props) {
                 }
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [props.currentDate]);
 
     return (
         <section className="section center col s12 l6" id="dataResults">
