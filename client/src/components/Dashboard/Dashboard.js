@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import Form from "../Form/Form";
 import Checkins from "../Checkins/Checkins";
 import Calendar from "../Calendar/Calendar";
+import "./dashboard.css"
 
 class Dashboard extends React.Component {
 
@@ -42,8 +43,10 @@ class Dashboard extends React.Component {
             <>
                 <Header date={this.state.currentDate} />
                 <main className="container row">
-                    {this.state.showData ? <Checkins displayForm={this.displayForm} currentDate={this.state.currentDate} /> : this.state.showForm ? <Form displayData={this.displayData} /> : <div></div>}
-                    <Calendar showCalendar={this.state.showCalendar} currentDate={this.state.currentDate} onChange={this.onChange}/>
+                    
+                    {this.state.showData ? <div id="checkIN"><Checkins displayForm={this.displayForm} currentDate={this.state.currentDate} /> </div> : this.state.showForm ? <div id="checkINForm"><Form displayData={this.displayData} /> </div> : <div></div>}
+                    <div><div id="calSpacing" className="hide-on-med-and-down"></div>
+                    <div id="dashCal"><Calendar showCalendar={this.state.showCalendar} currentDate={this.state.currentDate} onChange={this.onChange}/> </div></div>
                 </main>
                 <Footer displayData={this.displayData} displayCalendar={this.displayCalendar} />
             </>

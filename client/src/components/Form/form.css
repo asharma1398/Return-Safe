@@ -3,11 +3,12 @@
     border-radius: 8px;
     background: white;
     /* opacity: 0.9; */
-    margin-top: 10px;
+    /* margin-top: 10px; */
     -moz-box-shadow: 0 0 5px #ccc;
     -webkit-box-shadow: 0 0 5px #ccc;
     box-shadow: 0 0 5px #ccc;
     padding: 10px;
+    /* margin-top: 10px; */
 }
 
 .formItems {
@@ -43,4 +44,10 @@ span::before {
 [type="checkbox"]:checked+span:not(.lever):before {
     border-top: 2px solid transparent !important; 
     border-left: 2px solid transparent !important;
+}
+
+@media (max-width: 360px) {
+    #dataForm {
+        margin-top: 10px;
+    }
 }
