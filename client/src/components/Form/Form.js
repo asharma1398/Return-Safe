@@ -52,6 +52,7 @@ function Form(props) {
         API.saveCheckin(user.id, checkinForm)
             .then(res => {
                 console.log("checkin saved!");
+                props.displayData();
             })
             .catch(err => console.log(err));
     }
