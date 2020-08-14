@@ -30,7 +30,7 @@ function Form(props) {
             ...checkinForm,
             [name]: value
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleCheckChange = event => {
@@ -41,17 +41,18 @@ function Form(props) {
             ...checkinForm,
             [name]: checked
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log(checkinForm);
+        // console.log(checkinForm);
 
         API.saveCheckin(user.id, checkinForm)
             .then(res => {
                 console.log("checkin saved!");
+                props.displayData();
             })
             .catch(err => console.log(err));
     }
@@ -126,28 +127,24 @@ function Form(props) {
                             </p>
                         </Col>
 
-                        {/* <Col s={6}>
-                        <p>
-                            <Checkbox id="checkMask" label="Forgot Mask" value="Mask" onChange={handleInputChange}></Checkbox>
-                        </p>
-                    </Col> */}
+                        <Col s={4} className="input-field offset-s4">
+                            <input placeholder="98.6" id="temp" type="number" className="validate" name="temperature" onChange={handleInputChange} />
+                            <label htmlFor="temp">Temperature</label>
+                        </Col>
 
                         <Col s={11} className="input-field">
                             <i className="material-icons prefix">mode_edit</i>
                             <textarea id="comments" className="materialize-textarea" name="comments" onChange={handleInputChange}></textarea>
                             <label htmlFor="comments">Anything to note?</label>
                         </Col>
+                    
 
-                        {/* <Col s={3} className="input-field">
-                        <input placeholder="98.6" id="temp" type="text" className="validate" name="temperature" onChange={handleInputChange} />
-                        <label htmlFor="temp">Temperature</label>
-                    </Col> */}
-                        
                         <Col s={12} className="center submitBTN">
                             <Button className="red darken-4 submitBtn" type="submit" onClick={handleFormSubmit}>Submit</Button>
                         </Col>
-                        
+
                     </Row>
+
 
 
 

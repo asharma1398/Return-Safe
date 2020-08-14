@@ -51,3 +51,19 @@ span::before {
         margin-top: 10px;
     }
 }
+
+::placeholder {
+    text-align: center;
+}
+
+.input-field input[type=number]:focus + label,
+.input-field textarea:focus + label {
+ color: #B71C1C !important;
+}
+
+.input-field input[type=number]:focus,
+.input-field textarea:focus,
+.input-field textarea:focus {
+    border-bottom: 2px solid #B71C1C !important;
+    box-shadow: none !important;
+}
