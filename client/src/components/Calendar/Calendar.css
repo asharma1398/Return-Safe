@@ -1,12 +1,14 @@
 .react-calendar {
     border: solid white;
     padding: 10px;
-    box-shadow: 5px 10px #e53935 ;
+    box-shadow: 5px 10px #e53935;
+    border: ridge;
     max-width: 325px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .react-calendar__navigation__arrow {
