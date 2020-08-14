@@ -57,7 +57,7 @@ function Form(props) {
     }
 
     return (
-        <div id="background">
+        <div id="checkInBackground">
             <section className="section col s12 l6 center" id="dataForm">
 
                 <h4 className="center">Check-in:</h4>
