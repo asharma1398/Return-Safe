@@ -60,7 +60,7 @@ function Form(props) {
         <div id="background">
             <section className="section col s12 l6 center" id="dataForm">
 
-                <h4 className="center">Do A Quick Checkin!</h4>
+                <h4 className="center">Check-in:</h4>
 
                 <form action="#" className="formItems">
 
