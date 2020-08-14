@@ -16,7 +16,7 @@ const GeolocationSchema = new Schema({
         type: Number
     },
 
-    altitude: {
+    time: {
         type: Number
     }
 });

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my location</title>
+</head>
+
+<body>
+    <button id="start"> start</button>
+    <button id="stop"> stop</button>
+
+    <p id="lon"></p>
+    <p id="lat"></p>
+
+
+    <script>
+
+
+      
+
+        const start = document.querySelector("#start");
+        const stop = document.querySelector("#stop");
+
+        start.addEventListener("click", () => {
+            
+            navigator.geolocation.getCurrentPosition(data => {
+                var x = document.getElementById("lon")
+                var y = document.getElementById("lat")
+                console.log(data.coords.longitude);
+
+                x.innerHTML = data.coords.longitude;
+                y.innerHTML = data.coords.latitude
+            }, (error) => console.log(error),
+                {
+                    enableHighAccuracy: true
+                });
+
+
+        });
+    </script>
+</body>
+
+</html>
