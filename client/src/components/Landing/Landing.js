@@ -3,45 +3,26 @@ import "./landing.css";
 import { Link } from "react-router-dom";
 
 class Landing extends Component {
-  render() {
-    return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-            </h4>
-            <br />
-            <div className="col s6">
-              <Link
+ 
+render() {
+ return (
+  <section className="intro">
+    <div className="inner">
+      <div className="content">
+        <h1>Stay Healthy. <b>Return Safe.</b></h1>
+        <br></br>
+        <h4>Creating a community of trust will be paramount when adjusting to our new way of life.</h4>
+        <Link
                 to="/register"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable red darken-4"
+                className="btn waves-effect waves red-lighten-2" id="getStartedButton"
               >
-                Register
-              </Link>
-            </div>
-            <div className="col s6">
-              <Link
-                to="/login"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large btn-flat waves-effect indigo darken-4 white-text"
-              >
-                Log In
-              </Link>
-            </div>
-          </div>
+              Get Started
+        </Link>
         </div>
-      </div>
-    );
-  }
-}
+        </div>
+  </section>
+  );
+ }
+};
 
 export default Landing;

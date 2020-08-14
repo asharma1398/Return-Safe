@@ -71,7 +71,6 @@ function Checkins(props) {
                 </Collection>
 
             })}
-
         </section>
     )
 }
