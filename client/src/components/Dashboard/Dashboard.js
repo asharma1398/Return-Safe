@@ -33,6 +33,7 @@ class Dashboard extends React.Component {
 
     onChange = (date) => {
         this.setState({ currentDate: date })
+        this.displayData();
     }
 
     render() {

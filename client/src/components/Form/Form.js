@@ -30,7 +30,7 @@ function Form(props) {
             ...checkinForm,
             [name]: value
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleCheckChange = event => {
@@ -41,17 +41,18 @@ function Form(props) {
             ...checkinForm,
             [name]: checked
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log(checkinForm);
+        // console.log(checkinForm);
 
         API.saveCheckin(user.id, checkinForm)
             .then(res => {
                 console.log("checkin saved!");
+                props.displayData();
             })
             .catch(err => console.log(err));
     }
@@ -137,10 +138,10 @@ function Form(props) {
                         <label htmlFor="comments">Anything to note?</label>
                     </Col>
 
-                    {/* <Col s={3} className="input-field">
-                        <input placeholder="98.6" id="temp" type="text" className="validate" name="temperature" onChange={handleInputChange} />
+                    <Col s={3} className="input-field">
+                        <input placeholder="98.6" id="temp" type="number" className="validate" name="temperature" onChange={handleInputChange} />
                         <label htmlFor="temp">Temperature</label>
-                    </Col> */}
+                    </Col>
 
                     <Col s={12} className="center">
                         <Button className="red darken-4" type="submit" onClick={handleFormSubmit}>Submit</Button>
