@@ -9,7 +9,7 @@ render() {
   <section className="intro">
     <div className="inner">
       <div className="content">
-        <h1>Stay Healthy. Return Safe.</h1>
+        <h1>Stay Healthy. <b>Return Safe.</b></h1>
         <br></br>
         <h4>Creating a community of trust will be paramount when adjusting to our new way of life.</h4>
         <Link

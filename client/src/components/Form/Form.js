@@ -68,7 +68,7 @@ function Form(props) {
 
                     <Col s={6}>
                         <p>
-                            <Checkbox id="checkCough" label="Cough" value="Cough" name="cough" checked={checkinForm.cough} onChange={handleCheckChange}></Checkbox>
+                            <Checkbox id="checkCough" label="Cough" value="Cough" name="cough" checked={checkinForm.cough} onChange={handleCheckChange} className="checks"></Checkbox>
                         </p>
                     </Col>
 

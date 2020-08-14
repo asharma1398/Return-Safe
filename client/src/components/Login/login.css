@@ -1,14 +1,10 @@
 #background {
     display: flex;
     flex-direction: column;
-    background: url("../../assets/images/blueInkBackground.jpg") no-repeat center center fixed;
+    /* background: url("../../assets/images/blueInkBackground.jpg") no-repeat center center fixed; */
     height: 100%;
     width: 100%;
     background-size: cover;
-}
-
-a, b, h5 {
-    color: #000080;
 }
 
 .z-depth-1.grey.lighten-4.row {
