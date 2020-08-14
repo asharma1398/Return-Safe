@@ -4,7 +4,7 @@ export default {
     saveCheckin: function(checkinData) {
         return axios.post("/api/checkins", checkinData);
     },
-    getLocations: function(date){
+    getLocations: function(id, date){
         return axios.get("/api/mapping/" + id + "/" +date);
     },
     saveLocation: function(locationData) {

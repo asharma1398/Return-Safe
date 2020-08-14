@@ -8,6 +8,6 @@ router
     .route("/:date")
     .get(GeolocationController.findAll)
 router
-    .route("/:id")  
+    .route("/:id:date")  
     .post(GeolocationController.boxProps)
 module.exports = router;

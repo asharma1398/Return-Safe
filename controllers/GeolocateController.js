@@ -4,6 +4,7 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.GeoLocation
+    .findById(req.params.id)
     .find({recordedAt: req.params.date})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));

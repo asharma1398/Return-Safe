@@ -1,46 +1,43 @@
-const API = require("../../src/utils/API")
-
-var duration = 0
-const interval = setInterval(function () {
-    // method to be executed;
-     duration++
-     navigator.geolocation.getCurrentPosition((showPosition), 
-     (error) => console.log(error),
-    {
-        enableHighAccuracy: true
-    });
-}, 60000);
+import API from "../API"
 
 
 
 
+export default{
+    
+    showPosition: function(position) {
 
-
-function showPosition(position) {
-
-
+       
+    
     var lat = position.coords.latitude
     var lon = position.coords.longitude
 
+    console.log(lat)
+
     var lonLat = JSON.parse(localStorage.getItem("dist"));
+ 
 
     var oldLon_id = lonLat[0]
     var oldLat_id = lonLat[1]
 
+
     if (Math.abs(lon - oldLon_id) >  (.0000898 / Math.cos(lat)) || Math.abs(lat - oldLat_id) >  (.0000895 / Math.sin(90 - lon))) {
-       
+        var duration = JSON.parse(localStorage.getItem("dur"));
         if (duration >= 10) {
             const location = 
                 {
                   latitude: lat,
                   longitude: lon,
-                  time: duration
+                  time: duration,
+                  userId:  
                 }
             API.saveLocation(location)
-                
+
+        localStorage.setItem("dur", JSON.stringify(0));
         }
-        duration = 0
+        // duration = 0
         var newLonLat = [lon, lat]
         localStorage.setItem("dist", JSON.stringify(newLonLat));
     }
+}
 }
