@@ -16,6 +16,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Logout from "./components/Logout/Logout";
 
 
+
 // Checks the token (JWT) in order to keep the user logged in.
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;
@@ -38,6 +39,8 @@ const currentTime = Date.now() / 1000; // to get in milliseconds
 class App extends Component {
   render() {
     return (
+      <>
+      
     <Provider store={store}>
     <Router>
       <div className="App">
@@ -51,6 +54,7 @@ class App extends Component {
       </div>
     </Router>
     </Provider>
+    </>
   );
   }
 };
