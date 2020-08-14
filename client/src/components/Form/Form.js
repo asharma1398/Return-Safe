@@ -30,7 +30,7 @@ function Form(props) {
             ...checkinForm,
             [name]: value
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleCheckChange = event => {
@@ -41,13 +41,13 @@ function Form(props) {
             ...checkinForm,
             [name]: checked
         });
-        console.log(checkinForm);
+        // console.log(checkinForm);
     }
 
     const handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log(checkinForm);
+        // console.log(checkinForm);
 
         API.saveCheckin(user.id, checkinForm)
             .then(res => {
