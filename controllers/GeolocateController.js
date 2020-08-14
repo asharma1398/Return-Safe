@@ -27,7 +27,7 @@ module.exports = {
             .find({ _id: mongoose.Types.ObjectId(req.params.id)})
             .populate({
                 path: "locations",
-                match: { date: { $gte: req.params.lowDate, $lte: req.params.highDate }}
+                match: { recordedAt: { $gte: req.params.lowDate, $lte: req.params.highDate }}
             })
             .then(user => {
                 console.log(user)

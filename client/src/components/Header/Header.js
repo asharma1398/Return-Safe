@@ -5,9 +5,11 @@ function Header(props) {
     return (
     
         <header>
-            <LocButton/>
+       
             <nav className="nav-wrapper indigo darken-4">
+            
                 <div className="container center">
+                <LocButton/>
                     <a href="/dashboard" className="flow-text">{props.date.toDateString()}</a>
                 </div>
             </nav>
