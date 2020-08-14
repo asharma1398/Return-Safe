@@ -137,10 +137,10 @@ function Form(props) {
                         <label htmlFor="comments">Anything to note?</label>
                     </Col>
 
-                    {/* <Col s={3} className="input-field">
+                    <Col s={3} className="input-field">
                         <input placeholder="98.6" id="temp" type="text" className="validate" name="temperature" onChange={handleInputChange} />
                         <label htmlFor="temp">Temperature</label>
-                    </Col> */}
+                    </Col>
 
                     <Col s={12} className="center">
                         <Button className="red darken-4" type="submit" onClick={handleFormSubmit}>Submit</Button>
