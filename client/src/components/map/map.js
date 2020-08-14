@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Marker from './Marker/markerWrap';
 import {boxWrapStyle} from './Marker/boxWrapper';
-// import Marker from "./marker"
-// import API from '../../utils/API';
+import Marker from "./Marker/markerWrap"
+import API from '../../utils/API';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-function Map() {
-
+function Map(props) {
+    const { user } = props.auth
     const container = useRef();
 
     const Boxy = ({ text }) => <div ref={container} style = {boxWrapStyle}>{text}</div>;
@@ -31,12 +32,12 @@ function Map() {
     
 
    
-//     const [mapping, setLocation] = useState([])
+    const [mapping, setLocation] = useState([])
 
-//     const [center, setCenter] = useState({
-//         latitudeness: "",
-//         longitudeness: ""
-//     })
+    const [center, setCenter] = useState({
+        latitudeness: "",
+        longitudeness: ""
+    })
 
     const [infoBox, setInfoBox] = useState({
         text: "",
@@ -47,40 +48,46 @@ function Map() {
 
 
 
-//     useEffect(() => {
-//         loadLocations()
-//         loadSpot()
-//     }, [])
+    useEffect(() => {
+        loadLocations()
+        // loadSpot()
+    }, [])
 
-   function loadBox(id, lon, lat) {
-    console.log(handleClickOutside)
-    setInfoBox({text: id, long:lon, lati:lat})
- 
-      
-    // API.getBox(id)
-    // .then(res => {
-    //   console.log(res)
-
-    }
     
-//    }
+    const loadBox = (id, lon, lat) => {
+        API.getBox(id)
+        .then(res => {
+            setInfoBox({text: res, long:lon, lati:lat})
+    
+        })
+    
+        
+    }
+          
+       
+    
+    
+    
 
-//     function loadLocations() {
-        
-        
-        
-//         API.getLocations(date)
-//             .then(res => {
-//                 const latitudeness = (res.latitude.reduce((a, b) => (a + b)) / res.length);
-//                 const longitudeness = (res.longitude.reduce((a, b) => (a + b)) / res.length);
 
-//                 setLocation(res),
-//                 setCenter({longitudeness: longitudeness,  latitudeness: latitudeness})
+    function loadLocations() {
+        
+        let lowDate = new Date(props.currentDate.toDateString());
+        let date = new Date(props.currentDate);
+        let highDate = new Date(date.setHours(23,59,59,999));
+        
+        API.getLocations(user.id, lowDate, highDate)
+            .then(res => {
+                const latitudeness = (res.latitude.reduce((a, b) => (a + b)) / res.length);
+                const longitudeness = (res.longitude.reduce((a, b) => (a + b)) / res.length);
+
+                setLocation(res);
+                setCenter({longitudeness: longitudeness,  latitudeness: latitudeness});
             
 
-//             })
-//             .catch(err => console.log(err))
-//     };
+            })
+            .catch(err => console.log(err))
+    };
 
 
     return (
@@ -88,26 +95,21 @@ function Map() {
         <div style={{ height: '50vh', width: '50vw' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
-                defaultCenter = {{
-                    lat: 22.7,
-                    lng: 33
-    }}
-                // {center}
+                defaultCenter = {center}
                 defaultZoom={9}
             >
-                {/* {mapping.map(location => */}
+                {mapping.map(location =>
                     
                     <Marker
-                         onClick = {() =>loadBox("This is text that is written in a box right here", 22.3, 33)}
+                         onClick = {() =>loadBox(location._id, location.longitude, location.latitude)}
 
-                        // style = {MarkStyle}
+                        
                     
-                        // lat={location.lat}
-                        // lng={location.lon}
-                        lat = {22.3}
-                        lng = {33}
+                        lat={location.lat}
+                        lng={location.lon}
+                        
                     />
-                    {/* )} */}
+                    )}
                    {infoBox !== "" ?
                  
                     <Boxy 
@@ -126,6 +128,14 @@ function Map() {
 
 
 }
-
-
-export default Map;
+Map.propTypes = {
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps
+  )(Map);

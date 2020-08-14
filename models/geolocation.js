@@ -9,11 +9,11 @@ const GeolocationSchema = new Schema({
     },
     
     latitude: {
-        type: Number
+        type: mongoose.Schema.Types.Decimal128
     },
 
     longitude: {
-        type: Number
+        type: mongoose.Schema.Types.Decimal128
     },
 
     time: {

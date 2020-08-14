@@ -9,6 +9,7 @@ import Form from "../Form/Form";
 import Checkins from "../Checkins/Checkins";
 import Calendar from "../Calendar/Calendar";
 
+
 class Dashboard extends React.Component {
 
     state = {
