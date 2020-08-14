@@ -14,7 +14,7 @@ import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Logout from "./components/Logout/Logout";
-import Map from "./components/map/map"
+
 
 
 // Checks the token (JWT) in order to keep the user logged in.
@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <>
-      <Map/>
+      
     <Provider store={store}>
     <Router>
       <div className="App">

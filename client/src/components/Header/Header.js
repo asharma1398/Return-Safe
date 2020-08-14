@@ -1,5 +1,4 @@
 import React from "react";
-import LocButton from "../trackButton/trackButton"
 
 function Header(props) {   
     return (
@@ -10,7 +9,7 @@ function Header(props) {
                     <a href="/dashboard" className="flow-text">{props.date.toDateString()}</a>
                 </div>
             </nav>
-            <LocButton/>
+            
         </header>
         
     );

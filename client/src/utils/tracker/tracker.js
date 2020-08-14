@@ -29,7 +29,7 @@ export default{
                   latitude: lat,
                   longitude: lon,
                   time: duration,
-                  userId:  
+                  userId: "b" 
                 }
             API.saveLocation(location)
 
