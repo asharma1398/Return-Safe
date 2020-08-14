@@ -1,3 +1,69 @@
 #dataForm {
     margin-bottom: 5em;
+    border-radius: 8px;
+    background: white;
+    /* opacity: 0.9; */
+    /* margin-top: 10px; */
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px;
+    /* margin-top: 10px; */
+}
+
+.formItems {
+    display: flex;
+    text-align: left;
+    /* margin-left: 15%; */
+    width: 85%;
+    margin: auto;
+}
+
+.submitBTN {
+    display: flex;
+    text-align: center;
+    /* margin: auto; */
+    /* margin-left: 2% !important; */
+}
+
+.submitBtn {
+    margin: auto;
+    background: black;
+}
+
+span::before {
+    top: -4px;
+    left: -3px;
+    width: 12px;
+    height: 22px;
+    border-top: 2px solid #B71C1C !important;
+    border-left: 2px solid #B71C1C !important;
+    border-right: 2px solid #B71C1C !important; /* You need to change the colour here */
+    border-bottom: 2px solid #B71C1C !important; /* And here */}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-top: 2px solid transparent !important; 
+    border-left: 2px solid transparent !important;
+}
+
+@media (max-width: 360px) {
+    #dataForm {
+        margin-top: 10px;
+    }
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.input-field input[type=number]:focus + label,
+.input-field textarea:focus + label {
+ color: #B71C1C !important;
+}
+
+.input-field input[type=number]:focus,
+.input-field textarea:focus,
+.input-field textarea:focus {
+    border-bottom: 2px solid #B71C1C !important;
+    box-shadow: none !important;
 }

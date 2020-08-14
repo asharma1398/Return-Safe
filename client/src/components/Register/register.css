@@ -1,22 +1,12 @@
-body {
+#registerBackground {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
-    background-image: url("../../assets/images/blueInkBackground.jpg") !important;
-    background-repeat: no-repeat !important;
-    height: 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background: #fff;
-}
-
-a, b, h5 {
-    color: #000080;
-}
-
-div.container {
-    margin-top: 50px;
+    background-image: url("../../assets/images/blueInkBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .z-depth-1.grey.lighten-4.row {
@@ -39,7 +29,7 @@ div.container {
 .registerText {
     color: #B71C1C;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 .input-field input[type=date]:focus + label,
 .input-field input[type=text]:focus + label,

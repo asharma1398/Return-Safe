@@ -55,7 +55,7 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-        <>
+        <div id="registerBackground">
         <center>
       <div className="container">
         <div className="z-depth-1 grey lighten-4 row">
@@ -149,7 +149,7 @@ class Register extends Component {
     <div className="section"></div>
     <div className="section"></div>
 
-</>
+</div>
     );
   }
 }

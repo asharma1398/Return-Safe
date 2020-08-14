@@ -40,8 +40,7 @@ const currentTime = Date.now() / 1000; // to get in milliseconds
 class App extends Component {
   render() {
     return (
-      <>
-     
+      <div style={{height: "100%"}}>
     <Provider store={store}>
     
     <Router>
@@ -56,7 +55,7 @@ class App extends Component {
       </div>
     </Router>
     </Provider>
-    </>
+    </div>
   );
   }
 };

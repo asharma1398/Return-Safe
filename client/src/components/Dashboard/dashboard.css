@@ -1,0 +1,17 @@
+#checkIN, #checkINForm  { 
+    /* margin-right: 60%; */
+}
+
+#dashCal {
+    /* margin-left: 60%; */
+    /* margin: auto; */
+    /* width: 50%; */
+    right: 0;
+}
+
+#calSpacing {
+    width: 4%;
+    height: 30px;
+    float: left;
+    
+}

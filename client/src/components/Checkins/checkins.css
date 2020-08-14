@@ -1,5 +1,12 @@
 #dataResults {
     padding-bottom: 5em;
+    background-color: white;
+    margin-top: 0px;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 #dataResults ul {
@@ -9,4 +16,11 @@
 #dataResults li {
     padding-top: .5em !important;
     padding-bottom: .5em !important;
+}
+
+@media (max-width: 360px) {
+    #dataResults  {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
 }

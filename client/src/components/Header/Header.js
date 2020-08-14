@@ -6,7 +6,7 @@ function Header(props) {
     
         <header>
        
-            <nav className="nav-wrapper indigo darken-4">
+            <nav className="nav-wrapper indigo darken-4" id="navbar">
             
                 <div className="container center">
                 <LocButton/>
