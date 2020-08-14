@@ -17,6 +17,7 @@ import Logout from "./components/Logout/Logout";
 
 
 
+
 // Checks the token (JWT) in order to keep the user logged in.
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;
@@ -41,6 +42,7 @@ class App extends Component {
     return (
       <div style={{height: "100%"}}>
     <Provider store={store}>
+    
     <Router>
       <div className="App">
         <Route exact path="/" component={Landing} />

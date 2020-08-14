@@ -5,6 +5,7 @@ import "./checkins.css";
 import API from "../../utils/API";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Map from "../map/map"
 
 function Checkins(props) {
     const [checkins, setCheckins] = useState([]);
@@ -26,6 +27,7 @@ function Checkins(props) {
 
     return (
         <section className="section center col s12 l6" id="dataResults">
+            <Map currentDate = {props.currentDate}/>
             <h3>Checkins</h3>
 
             {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckin" className="red darken-4"><span className="left" onClick={props.displayForm}>Add Checkin</span><i className="small material-icons">create</i></Button>}

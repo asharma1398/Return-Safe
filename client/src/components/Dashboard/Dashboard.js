@@ -10,6 +10,7 @@ import Checkins from "../Checkins/Checkins";
 import Calendar from "../Calendar/Calendar";
 import "./dashboard.css"
 
+
 class Dashboard extends React.Component {
 
     state = {

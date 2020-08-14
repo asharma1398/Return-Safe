@@ -1,8 +1,12 @@
 
 import Track from '../../utils/tracker/tracker';
 import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-function LocButton() {
+function LocButton(props) {
+    const { user } = props.auth
+    localStorage.setItem("reset", "false");
 
     useEffect(() => {
         localStorage.setItem("dur", JSON.stringify(0));
@@ -20,11 +24,17 @@ const changeState = () => {
     useEffect(() => {
         if (onOff) {
             const interval = setTimeout(() => {
+                if (localStorage.getItem("reset") == "false") {
                 setTime(time + 1)
                 localStorage.setItem("dur", JSON.stringify(time));
+                } else {
+                    setTime(1)
+                    clearInterval(interval)
+                    localStorage.setItem("reset", "false"); }
                 navigator.geolocation.getCurrentPosition(pos => {
                     console.log(pos)
-                    Track.showPosition(pos)
+                    Track.showPosition(pos, user)
+                
                 },
                     (error) => console.log(error),
                     {
@@ -43,42 +53,18 @@ return (
     
 )
 }
-
-export default LocButton;
-
-
-
-
-// useEffect(() => {
-    //    const useIt = () => {
-    //     const timer = setTimeout(() => {
-    //         setTime(time + 1)
-    //         localStorage.setItem("dur", JSON.stringify(time));
-    //         navigator.geolocation.getCurrentPosition(pos => {
-    //             Track.showPosition(pos)
-    //         },
-    //             (error) => console.log(error),
-    //             {
-    //                 enableHighAccuracy: true
-    //             });
-    //     }, 60000);
-    //     return () => clearInterval(timer);
-    // }
-    // // }, [time]);
-
-// onClick={() => changeState()}
+LocButton.propTypes = {
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps
+  )(LocButton);
 
 
-// useEffect(() => {
-//     const timer = setTimeout(() => {
-//         setTime(time + 1)
-//         navigator.geolocation.getCurrentPosition(pos => {
-//             Track.showPosition(pos)
-//         }, 
-//         (error) => console.log(error),
-//        {
-//            enableHighAccuracy: true
-//        });
-//     }, 60000);
 
-//   }, []);
+

@@ -2,12 +2,12 @@ const router = require("express").Router();
 const GeolocationController = require("../../controllers/GeolocateController");
 
 
-router.route("/")
+router.route("/:id")
+    .get(GeolocationController.find)
     .post(GeolocationController.create);
-router
-    .route("/:date")
-    .get(GeolocationController.findAll)
-router
-    .route("/:id:date")  
+
+router.route("/:id/:lowDate/:highDate")
+    .get(GeolocationController.find)
+router.route("/marker/:id")  
     .post(GeolocationController.boxProps)
 module.exports = router;
