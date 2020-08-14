@@ -39,18 +39,27 @@ function Checkins(props) {
                             if (checkin[item] && item !== "date" && item !== "_id") {
                                 switch (item) {
                                     case "cough":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Cough</CollectionItem>
                                     case "shortnessOfBreath":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Breathlessness</CollectionItem>
                                     case "fatigue":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Fatigue</CollectionItem>
                                     case "bodyAche":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Muscle Aches</CollectionItem>
                                     case "headache":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Headache</CollectionItem>
                                     case "senseLoss":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Loss of senses</CollectionItem>
                                     case "soreThroat":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Sore Throat</CollectionItem>
                                     case "congestion":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Congestion</CollectionItem>
                                     case "nausea":
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Nausea</CollectionItem>
                                     case "diarrhea":
-                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>{item}</CollectionItem>
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">check</i>Diarrhea</CollectionItem>
                                     case "temperature":
-                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">local_pharmacy</i>{checkin[item]}</CollectionItem>
+                                        return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s6"><i className="small material-icons">{checkin[item] > 100 ? "sick" : "emoji_emotions"}</i>{checkin[item]}</CollectionItem>
                                     case "comments":
                                         return <CollectionItem key={`${checkin._id}${item}`} className="valign-wrapper col s12">Comments: {checkin[item]}</CollectionItem>
                                     default:
