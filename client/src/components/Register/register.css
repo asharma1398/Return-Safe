@@ -25,21 +25,17 @@
     margin-top: 30px;
 }
 
-.welcomeText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000080;
+.registerWelcomeText {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #B71C1C;
     font-weight: bold;
-}
-
-.loginText, .registerText {
-    color: #EEE;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .registerText {
     color: #B71C1C;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
+    font-family: "Montserrat", sans-serif;
+}
 
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
     color: #B71C1C !important;
@@ -56,4 +52,5 @@
 
 #registerButton {
     border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
 }
