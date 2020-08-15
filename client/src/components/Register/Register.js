@@ -62,7 +62,7 @@ class Register extends Component {
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post" >
             <div className='row'>
               <div className='col s12'>
-              <span className="welcomeText">Welcome! Please create an account.</span>
+              <span className="registerWelcomeText">Welcome! Please create an account.</span>
 
               </div>
             </div>

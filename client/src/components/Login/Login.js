@@ -63,7 +63,7 @@ class Login extends Component {
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
             <div className="row">
               <div className="col s12">
-              <span className="welcomeText">Hello, again! Please log in.</span>
+              <span className="loginWelcomeText">Hello, again! Please log in.</span>
               </div>
             </div>
 

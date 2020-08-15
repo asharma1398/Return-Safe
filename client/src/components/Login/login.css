@@ -15,14 +15,14 @@
 }
 
 
-.welcomeText {
+.loginWelcomeText {
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     color: #B71C1C;
     font-weight: bold;
 }
 
-.loginText, .registerText {
+.loginText {
     color: #B71C1C;
     font-family: "Montserrat", sans-serif;
 }
@@ -44,4 +44,3 @@
     border-radius: 4px;
     font-family: "Montserrat", sans-serif;
 }
-
