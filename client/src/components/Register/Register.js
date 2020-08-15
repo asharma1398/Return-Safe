@@ -58,7 +58,7 @@ class Register extends Component {
         <div id="registerBackground">
         <center>
       <div className="container">
-        <div className="z-depth-1 grey lighten-4 row">
+        <div className="z-depth-1 white row">
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post" >
             <div className='row'>
               <div className='col s12'>
@@ -138,7 +138,7 @@ class Register extends Component {
             <br />
             <center>
               <div className='row'>
-                <button type='submit' name='btn_register' className='col s12 btn btn-large waves-effect red darken-4' id="registerButton">Register</button>
+                <button type='submit' name='btn_register' className='col s12 btn btn-large waves-effect waves-light hoverable red darken-4' id="registerButton">Register</button>
               </div>
             </center>
           </form>
