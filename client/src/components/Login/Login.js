@@ -58,7 +58,7 @@ class Login extends Component {
         <div id="background">
         <center id="center">
       <div className="container">
-        <div className="z-depth-1 grey lighten-4 row">
+        <div className="z-depth-1 white row">
 
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
             <div className="row">
