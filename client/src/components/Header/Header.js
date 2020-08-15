@@ -10,7 +10,7 @@ function Header(props) {
             
                 <div className="container center">
                 <LocButton/>
-                    <a href="/dashboard" className="flow-text">{props.date.toDateString()}</a>
+                    <a href="/dashboard" className="flow-text" id="dashboardHeaderText">{props.date.toDateString()}</a>
                 </div>
             </nav>
             
