@@ -15,7 +15,7 @@ function Map(props) {
     useEffect(() => {
         
         document.addEventListener("mouseup", handleClickOutside);
-                
+        loadLocations()
             }, [])
 
    
@@ -48,11 +48,7 @@ function Map(props) {
 
 
 
-    useEffect(() => {
-        loadLocations()
-        // loadSpot()
-    }, [])
-
+    
     
     const loadBox = (id, lon, lat) => {
         API.getBox(id)
@@ -79,41 +75,52 @@ function Map(props) {
         
         API.getLocations(user.id, lowDate, highDate)
             .then(res => {
-                console.log(res)
-                const latitudeness = (res.data[0].locations.latitude.reduce((a, b) => (a + b)) / res.length);
-                const longitudeness = (res.data[0].locations.longitude.reduce((a, b) => (a + b)) / res.length);
-
-                setLocation(res.data[0].locations);
+                console.log(res.data[0].locations)
+                var latitudeness = 0
+                var longitudeness = 0
+                
+                for(var i = 0; i < res.data[0].locations.length; i++){
+                   longitudeness =  res.data[0].locations[i].longitude + longitudeness
+                   latitudeness =  res.data[0].locations[i].latitude + latitudeness
+                }
+                
                 setCenter({longitudeness: longitudeness,  latitudeness: latitudeness});
-            
+                setLocation(res.data[0].locations);
 
-            })
+                console.log(mapping)
+
+                
+               
+               })
             .catch(err => console.log(err))
     };
 
 
     return (
         
+        
         <div style={{ height: '50vh', width: '85vw' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
                 defaultCenter = {{
-                    lat: 22.7,
-                    lng: 33
+                    lat:  39.88,
+                    lng: -75.2
     }}
                 defaultZoom={9}
             >
-                {mapping.map(location =>
+                
+                {mapping.map((location, index) =>
                     
                     <Marker
                          onClick = {() =>loadBox(location._id, location.longitude, location.latitude)}
-
+                         
                         
                     
-                        lat={location.lat}
-                        lng={location.lon}
+                        lat={location.latitude.$numberDecimal}
+                        lng={location.longitude.$numberDecimal}
                         
                     />
+                
                     )}
                    {infoBox !== "" ?
                  
