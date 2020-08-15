@@ -106,7 +106,7 @@ function Map(props) {
         <div className="googleMapLayout">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
-                center = {center}
+                // center = {center}
                 defaultZoom={9}
             >
                 
