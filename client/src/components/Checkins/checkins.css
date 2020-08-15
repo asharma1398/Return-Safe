@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+
 #dataResults {
     padding-bottom: 5em;
     background-color: white;
@@ -27,5 +29,11 @@
 
 #addCheckinButton {
     border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.checkinLogsTitle {
+    font-family: "Raleway", sans-serif;
 }
 

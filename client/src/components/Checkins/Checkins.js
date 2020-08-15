@@ -30,11 +30,11 @@ function Checkins(props) {
             <div className="mapOnCheckinPage">
             <Map currentDate = {props.currentDate} />
             </div>
-            <h3>Check-in</h3>
+            <h3 className="checkinLogsTitle">Check-in Logs</h3>
 
-            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckinButton" className="waves-effect waves-light btn hoverable red darken-4"><span className="left" onClick={props.displayForm}><i className="small material-icons left">create</i>&nbsp;Add Check-in</span></Button>}
+            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckinButton" className="waves-effect waves-light btn hoverable red darken-4"><span className="left" onClick={props.displayForm}><i className="small material-icons left">create</i>Add Check-in</span></Button>}
 
-            {checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : checkins.map(checkin => {
+            {checkins.length === 0 ? <section><Icon large className="red-text">coronavirus</Icon></section> : checkins.map(checkin => {
 
                 return <Collection header={new Date(checkin.date).toLocaleTimeString()} className="row" key={checkin._id} >
                     {
