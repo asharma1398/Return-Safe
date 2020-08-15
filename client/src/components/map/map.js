@@ -21,9 +21,10 @@ function Map(props) {
     }, [])
 
 
+    
 
     const handleClickOutside = event => {
-
+        
         if (container.current && !container.current.contains(event.target)) {
             setInfoBox("")
         }
@@ -36,31 +37,25 @@ function Map(props) {
 
     const [mapping, setLocation] = useState([])
 
-    const [center, setCenter] = useState({
-        latitudeness: "",
-        longitudeness: ""
-    })
+    const [center, setCenter] = useState()
 
-    const [infoBox, setInfoBox] = useState({
-        text: "",
-        long: 0,
-        lati: 0
-    })
+    const [infoBox, setInfoBox] = useState()
+    
 
+    useEffect(() => {
+        console.log(infoBox)
+    }, [infoBox])
 
-
-
-
-
-    const loadBox = (id, lon, lat) => {
-        API.getBox(id)
-            .then(res => {
-                const textBox = (`You were here for ${res.time} minutes at ${res.recordedAt}.`)
-                setInfoBox({ text: textBox, long: lon, lati: lat })
-
-            })
-
-
+    
+    
+    
+          
+    const loadBox = (time, record, lon, lat) => {
+       console.log(time,record, lon, lat)
+        
+           const textBox = (`You were here for ${time} minutes at ${record}.`)
+         
+            setInfoBox({text: textBox, long:lon, lati:lat})
     }
 
 
@@ -80,16 +75,23 @@ function Map(props) {
                 console.log(res.data[0].locations)
                 var latitudeness = 0
                 var longitudeness = 0
-
-                for (var i = 0; i < res.data[0].locations.length; i++) {
-                    longitudeness = res.data[0].locations[i].longitude + longitudeness
-                    latitudeness = res.data[0].locations[i].latitude + latitudeness
+                
+                for(var i = 0; i < res.data[0].locations.length; i++){
+                   longitudeness =  parseFloat(res.data[0].locations[i].longitude.$numberDecimal) + longitudeness
+                   latitudeness =  parseFloat(res.data[0].locations[i].latitude.$numberDecimal) + latitudeness
                 }
+   
+                var origin = []
+                origin.push(latitudeness/res.data[0].locations.length)
+                origin.push(longitudeness/res.data[0].locations.length)
 
-                setCenter({ longitudeness: longitudeness, latitudeness: latitudeness });
+                console.log(origin)
+
+                
+                setCenter(origin);
                 setLocation(res.data[0].locations);
 
-                console.log(mapping)
+            
 
 
 
@@ -104,35 +106,33 @@ function Map(props) {
         <div className="googleMapLayout">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
-                defaultCenter={{
-                    lat: 39.88,
-                    lng: -75.2
-                }}
+                center = {center}
                 defaultZoom={9}
             >
-
-                {mapping.map((location, index) =>
-
+                
+                {mapping.map((location) =>
+                    
                     <Marker
-                        onClick={() => loadBox(location._id, location.longitude, location.latitude)}
-
-
-
+                        //  onClick = {() =>loadBox(location._id, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
+                        onClick = {() =>loadBox(location.time, location.recordedAt, parseFloat(location.longitude.$numberDecimal), parseFloat(location.latitude.$numberDecimal ))}
+                         
+                        
+                    
                         lat={location.latitude.$numberDecimal}
                         lng={location.longitude.$numberDecimal}
 
                     />
-
-                )}
-                {infoBox !== "" ?
-
-                    <Boxy
-
-                        lat={infoBox.long}
-                        lng={infoBox.lati}
-                        text={infoBox.text}
-                    /> : <div></div>
-                }
+                
+                    )}
+                   {infoBox ?
+                 
+                    <Boxy 
+                    
+                    lat = {infoBox.long}
+                    lng = {infoBox.lati}
+                    text = {infoBox.text}
+                      /> : <div></div>
+                   }
 
             </GoogleMapReact>
         </div>
