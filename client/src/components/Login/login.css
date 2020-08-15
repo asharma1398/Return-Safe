@@ -21,6 +21,7 @@
     margin-top: 30px;
 }
 
+
 .welcomeText {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #B71C1C;
@@ -50,3 +51,4 @@
 #loginButton {
     border-radius: 4px;
 }
+
