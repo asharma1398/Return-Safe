@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
 .react-calendar {
     border: solid white;
     padding: 10px;
@@ -23,15 +26,17 @@
 .react-calendar__tile {
     font-size: large;
     border-radius: 3px;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: bolder;
 }
 
 .react-calendar__tile--active {
-    background: #e70220;
+    background: #B71C1C;
     color: white;
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-    background: #e70220;
+    background: #B71C1C;
 }
 
 .react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day {
@@ -41,5 +46,12 @@
 
 .react-calendar__month-view__weekdays__weekday {
     font-size: 14px;
-    
+    font-family: "Raleway", sans-serif !important;
+    font-weight: 900 !important;
+}
+
+.react-calendar__navigation__label__labelText {
+    font-family: "Raleway", sans-serif !important;
+    font-size: medium;
+    font-weight: 900;
 }

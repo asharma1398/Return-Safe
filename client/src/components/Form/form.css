@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+
 #dataForm {
+    font-family: "Montserrat", sans-serif;
     margin-bottom: 5em;
     border-radius: 8px;
     background: white;
@@ -12,6 +15,7 @@
 }
 
 .formItems {
+    font-family: "Montserrat", sans-serif;
     display: flex;
     text-align: left;
     /* margin-left: 15%; */
@@ -20,6 +24,7 @@
 }
 
 .submitBTN {
+    font-family: "Montserrat", sans-serif;
     display: flex;
     text-align: center;
     /* margin: auto; */
@@ -53,6 +58,7 @@ span::before {
 }
 
 ::placeholder {
+    font-family: "Montserrat", sans-serif;
     text-align: center;
 }
 
@@ -62,8 +68,23 @@ span::before {
 }
 
 .input-field input[type=number]:focus,
-.input-field textarea:focus,
-.input-field textarea:focus {
+.input-field textarea:focus, input.valid[type=number]:not(.browser-default) {
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
+}
+
+/* makes the temp number colored (red) */
+.input-field input[type=number]:focus:not([readonly]) + label, 
+.input-field textarea:focus:not([readonly]) + label, 
+input.valid[type=number]:not(.browser-default) {
+    color: #B71C1C !important;
+}
+
+#showDataButton, #formSubmitButton {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 4px;
+}
+
+#pencil {
+    color: #B71C1C;
 }

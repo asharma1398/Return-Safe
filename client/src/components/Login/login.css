@@ -1,41 +1,46 @@
-/* body {
-    display: flex;
-    flex-direction: column;
-    background: url("../../assets/images/blueInkBackground.jpg") no-repeat center center fixed;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
 
-.z-depth-1.grey.lighten-4.row {
+.z-depth-1.white.row {
     display: inline-block; 
-    padding: 50px 60px 0px 60px; 
     border: 1px solid #EEE;
-    margin-top: 100px;
+    background: white;
+    border-radius: 8px;
+    background: white;
+    /* opacity: 0.95; */
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    padding: 50px 60px 0px 60px !important; 
+    box-shadow: 0 0 5px #ccc;
+    margin-top: 30px;
 }
 
-.welcomeText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.loginWelcomeText {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
     color: #B71C1C;
     font-weight: bold;
 }
 
-.loginText, .registerText {
+.loginText {
     color: #B71C1C;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
-.input-field input[type=date]:focus + label,
-.input-field input[type=text]:focus + label,
-.input-field input[type=email]:focus + label,
-.input-field input[type=password]:focus + label {
-    color: #B71C1C;
+.input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+    color: #B71C1C !important;
 }
 
-.input-field input[type=date]:focus,
-.input-field input[type=text]:focus,
-.input-field input[type=email]:focus,
-.input-field input[type=password]:focus {
-    border-bottom: 2px solid #B71C1C;
-    box-shadow: none;
+.input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label {
+    color: #B71C1C !important;
+}
+
+.input-field input[type=email]:focus, .input-field input[type=password]:focus {
+    border-bottom: 2px solid #B71C1C !important;
+    box-shadow: none !important;
+}
+
+#loginButton {
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
 }

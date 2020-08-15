@@ -1,3 +1,5 @@
+
+
 #registerBackground {
     display: flex;
     height: 100vh;
@@ -9,39 +11,46 @@
     background-size: cover;
 }
 
-.z-depth-1.grey.lighten-4.row {
+.z-depth-1.white.row {
     display: inline-block; 
-    padding: 50px 60px 0px 60px; 
     border: 1px solid #EEE;
+    background: white;
+    border-radius: 8px;
+    background: white;
+    /* opacity: 0.95; */
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    padding: 50px 60px 0px 60px !important; 
+    box-shadow: 0 0 5px #ccc;
+    margin-top: 30px;
 }
 
-.welcomeText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000080;
+.registerWelcomeText {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #B71C1C;
     font-weight: bold;
-}
-
-.loginText, .registerText {
-    color: #EEE;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .registerText {
     color: #B71C1C;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
+    font-family: "Montserrat", sans-serif;
+}
 
-.input-field input[type=date]:focus + label,
-.input-field input[type=text]:focus + label,
-.input-field input[type=email]:focus + label,
-.input-field input[type=password]:focus + label {
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
     color: #B71C1C !important;
 }
 
-.input-field input[type=date]:focus,
-.input-field input[type=text]:focus,
-.input-field input[type=email]:focus,
-.input-field input[type=password]:focus {
+.input-field input[type=text]:focus:not([readonly]) + label, .input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label {
+    color: #B71C1C !important;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
+}
+
+#registerButton {
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
 }

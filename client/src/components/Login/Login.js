@@ -58,12 +58,12 @@ class Login extends Component {
         <div id="background">
         <center id="center">
       <div className="container">
-        <div className="z-depth-1 grey lighten-4 row">
+        <div className="z-depth-1 white row">
 
           <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
             <div className="row">
               <div className="col s12">
-              <span className="welcomeText">Hello, again! Please log in.</span>
+              <span className="loginWelcomeText">Hello, again! Please log in.</span>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ class Login extends Component {
 
             <br />
               <div className="row">
-                <button type="submit" name="btn_login" className="col s12 btn btn-large waves-effect red darken-4" id="loginButton">Login</button>
+                <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable red darken-4" id="loginButton">Login</button>
               </div>
           </form>
         </div>

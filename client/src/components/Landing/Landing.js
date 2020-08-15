@@ -14,7 +14,7 @@ render() {
         <h4>Creating a community of trust will be paramount when adjusting to our new way of life.</h4>
         <Link
                 to="/register"
-                className="btn waves-effect waves red-lighten-2" id="getStartedButton"
+                className="waves-effect waves-light btn hoverable red lighten-1" id="getStartedButton"
               >
               Get Started
         </Link>
