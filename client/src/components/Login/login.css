@@ -32,19 +32,17 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.input-field input[type=date]:focus + label,
-.input-field input[type=text]:focus + label,
-.input-field input[type=email]:focus + label,
-.input-field input[type=password]:focus + label {
-    color: #B71C1C;
+.input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+    color: #B71C1C !important;
 }
 
-.input-field input[type=date]:focus,
-.input-field input[type=text]:focus,
-.input-field input[type=email]:focus,
-.input-field input[type=password]:focus {
-    border-bottom: 2px solid #B71C1C;
-    box-shadow: none;
+.input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label {
+    color: #B71C1C !important;
+}
+
+.input-field input[type=email]:focus, .input-field input[type=password]:focus {
+    border-bottom: 2px solid #B71C1C !important;
+    box-shadow: none !important;
 }
 
 #loginButton {
