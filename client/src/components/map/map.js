@@ -18,12 +18,12 @@ function Map(props) {
         loadLocations()
             }, [])
 
-   
+    
 
     const handleClickOutside = event => {
-
+        
         if (container.current && !container.current.contains(event.target)) {
-          setInfoBox({})
+          setInfoBox("")
     }
     }
         
@@ -34,45 +34,25 @@ function Map(props) {
    
     const [mapping, setLocation] = useState([])
 
-    const [center, setCenter] = useState({
-        latitudeness: "",
-        longitudeness: ""
-    })
+    const [center, setCenter] = useState()
 
-    const [infoBox, setInfoBox] = useState({
-        text: "",
-        long: 0,
-        lati: 0
-    })
+    const [infoBox, setInfoBox] = useState()
     
 
-
+    useEffect(() => {
+        console.log(infoBox)
+    }, [infoBox])
 
     
     
-    // const loadBox = (id, lon, lat) => {
-    //     const go = id
-    //     console.log(go)
-    //     API.getBox(id)
-    //     .then(res => {
-            
-    //        const textBox = (`You were here for ${res.time} minutes at ${res.recordedAt}.`)
-    //         setInfoBox({text: textBox, long:lon, lati:lat})
     
-    //     })
-    
-        
-    // }
           
     const loadBox = (time, record, lon, lat) => {
-       
+       console.log(time,record, lon, lat)
         
            const textBox = (`You were here for ${time} minutes at ${record}.`)
+         
             setInfoBox({text: textBox, long:lon, lati:lat})
-    
-        console.log(infoBox)
-    
-        
     }
           
        
@@ -94,11 +74,18 @@ function Map(props) {
                 var longitudeness = 0
                 
                 for(var i = 0; i < res.data[0].locations.length; i++){
-                   longitudeness =  res.data[0].locations[i].longitude + longitudeness
-                   latitudeness =  res.data[0].locations[i].latitude + latitudeness
+                   longitudeness =  parseFloat(res.data[0].locations[i].longitude.$numberDecimal) + longitudeness
+                   latitudeness =  parseFloat(res.data[0].locations[i].latitude.$numberDecimal) + latitudeness
                 }
+   
+                var origin = []
+                origin.push(latitudeness/res.data[0].locations.length)
+                origin.push(longitudeness/res.data[0].locations.length)
+
+                console.log(origin)
+
                 
-                setCenter({longitudeness: longitudeness,  latitudeness: latitudeness});
+                setCenter(origin);
                 setLocation(res.data[0].locations);
 
             
@@ -116,10 +103,7 @@ function Map(props) {
         <div style={{ height: '50vh', width: '85vw' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
-                defaultCenter = {{
-                    lat:  39.88,
-                    lng: -75.2
-    }}
+                center = {center}
                 defaultZoom={9}
             >
                 
@@ -127,7 +111,7 @@ function Map(props) {
                     
                     <Marker
                         //  onClick = {() =>loadBox(location._id, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
-                        onClick = {() =>loadBox(location.time, location.recordedAt, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
+                        onClick = {() =>loadBox(location.time, location.recordedAt, parseFloat(location.longitude.$numberDecimal), parseFloat(location.latitude.$numberDecimal ))}
                          
                         
                     
@@ -137,7 +121,7 @@ function Map(props) {
                     />
                 
                     )}
-                   {infoBox !== {} ?
+                   {infoBox ?
                  
                     <Boxy 
                     
