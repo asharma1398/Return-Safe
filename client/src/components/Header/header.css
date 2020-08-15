@@ -11,3 +11,13 @@
 #dashboardHeaderText {
     font-family: "Raleway", sans-serif !important;
 }
+
+.headingNavbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.material-icons.logoutICON {
+    font-size: 36px;
+}
