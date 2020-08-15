@@ -23,7 +23,7 @@ function Map(props) {
     const handleClickOutside = event => {
 
         if (container.current && !container.current.contains(event.target)) {
-          setInfoBox("")
+          setInfoBox({})
     }
     }
         
@@ -50,13 +50,27 @@ function Map(props) {
 
     
     
-    const loadBox = (id, lon, lat) => {
-        API.getBox(id)
-        .then(res => {
-           const textBox = (`You were here for ${res.time} minutes at ${res.recordedAt}.`)
+    // const loadBox = (id, lon, lat) => {
+    //     const go = id
+    //     console.log(go)
+    //     API.getBox(id)
+    //     .then(res => {
+            
+    //        const textBox = (`You were here for ${res.time} minutes at ${res.recordedAt}.`)
+    //         setInfoBox({text: textBox, long:lon, lati:lat})
+    
+    //     })
+    
+        
+    // }
+          
+    const loadBox = (time, record, lon, lat) => {
+       
+        
+           const textBox = (`You were here for ${time} minutes at ${record}.`)
             setInfoBox({text: textBox, long:lon, lati:lat})
     
-        })
+        console.log(infoBox)
     
         
     }
@@ -87,7 +101,7 @@ function Map(props) {
                 setCenter({longitudeness: longitudeness,  latitudeness: latitudeness});
                 setLocation(res.data[0].locations);
 
-                console.log(mapping)
+            
 
                 
                
@@ -109,10 +123,11 @@ function Map(props) {
                 defaultZoom={9}
             >
                 
-                {mapping.map((location, index) =>
+                {mapping.map((location) =>
                     
                     <Marker
-                         onClick = {() =>loadBox(location._id, location.longitude, location.latitude)}
+                        //  onClick = {() =>loadBox(location._id, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
+                        onClick = {() =>loadBox(location.time, location.recordedAt, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
                          
                         
                     
@@ -122,7 +137,7 @@ function Map(props) {
                     />
                 
                     )}
-                   {infoBox !== "" ?
+                   {infoBox !== {} ?
                  
                     <Boxy 
                     
