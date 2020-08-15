@@ -71,3 +71,7 @@ span::before {
 #showDataButton, #formSubmitButton {
     border-radius: 4px;
 }
+
+#pencil {
+    color: #B71C1C;
+}

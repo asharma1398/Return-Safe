@@ -133,7 +133,7 @@ function Form(props) {
                         </Col>
 
                         <Col s={11} className="input-field">
-                            <i className="material-icons prefix">mode_edit</i>
+                            <i className="material-icons prefix" id="pencil">mode_edit</i>
                             <textarea id="comments" className="materialize-textarea" name="comments" onChange={handleInputChange}></textarea>
                             <label htmlFor="comments">Anything to note?</label>
                         </Col>
