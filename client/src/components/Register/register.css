@@ -53,3 +53,7 @@
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
 }
+
+#registerButton {
+    border-radius: 4px;
+}

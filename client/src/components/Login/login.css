@@ -46,3 +46,7 @@
     border-bottom: 2px solid #B71C1C;
     box-shadow: none;
 }
+
+#loginButton {
+    border-radius: 4px;
+}

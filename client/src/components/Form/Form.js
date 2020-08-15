@@ -140,7 +140,7 @@ function Form(props) {
                     
 
                         <Col s={12} className="center submitBTN">
-                            <Button className="red darken-4 waves-effect waves-light btn hoverable submitBtn" type="submit" onClick={handleFormSubmit}>Submit</Button>
+                            <Button className="red darken-4 waves-effect waves-light btn hoverable submitBtn" id="formSubmitButton" type="submit" onClick={handleFormSubmit}>Submit</Button>
                         </Col>
 
                     </Row>
@@ -151,7 +151,7 @@ function Form(props) {
 
                 </form>
 
-                <Button className="hide-on-med-and-down btn-large red waves-effect waves-light btn hoverable darken-4" onClick={props.displayData}>Show Data</Button>
+                <Button className="hide-on-med-and-down btn-large red waves-effect waves-light btn hoverable darken-4" id="showDataButton" onClick={props.displayData}>Show Data</Button>
             </section>
         </div>
     );

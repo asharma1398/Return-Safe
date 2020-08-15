@@ -67,3 +67,7 @@ span::before {
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
 }
+
+#showDataButton, #formSubmitButton {
+    border-radius: 4px;
+}
