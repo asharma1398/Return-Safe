@@ -51,7 +51,6 @@ const changeState = () => {
 
 return (
     
-    // <button onClick={() => changeState()}>location track</button>
     <Switch offLabel="" onLabel="" onChange={() => changeState()}></Switch>
     
 )
