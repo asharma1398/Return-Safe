@@ -1,21 +1,23 @@
 import React from 'react';
+import 'materialize-css';
+import { Icon } from 'react-materialize';
 
-const K_WIDTH = 12;
-const K_HEIGHT = 12;
+const K_WIDTH = 50;
+const K_HEIGHT = 50;
 
 const MarkStyle = {
   position: 'absolute',
   width: K_WIDTH,
   height: K_HEIGHT,
   left: -K_WIDTH / 2,
-  top: -K_HEIGHT / 2,
+  top: -K_HEIGHT,
 
   
-  borderRadius: K_HEIGHT,
-  backgroundColor: 'red',
-  textAlign: 'center',
-  color: '#3f51b5',
-  padding: 4
+  // borderRadius: K_HEIGHT,
+  // backgroundColor: 'red',
+  // textAlign: 'center',
+  // color: '#3f51b5',
+  // padding: 4
   
 };
  
@@ -24,7 +26,7 @@ const MarkStyle = {
 function Marker(props) {
 
     
-        return <button style = {MarkStyle} onClick = {props.onClick}><i className="fa fa-map-marker"></i></button>
+        return <Icon style={MarkStyle} onClick={props.onClick}>place</Icon>
       
        
         

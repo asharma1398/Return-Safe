@@ -3,6 +3,8 @@ import Track from '../../utils/tracker/tracker';
 import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import 'materialize-css';
+import { Switch } from 'react-materialize';
 
 function LocButton(props) {
     const { user } = props.auth
@@ -49,7 +51,8 @@ const changeState = () => {
 
 return (
     
-    <button onClick={() => changeState()}>location track</button>
+    // <button onClick={() => changeState()}>location track</button>
+    <Switch offLabel="" onLabel="" onChange={() => changeState()}></Switch>
     
 )
 }

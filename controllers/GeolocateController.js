@@ -36,7 +36,7 @@ module.exports = {
     },
 boxProps: function(req, res) {
     db.Geolocation
-      .findById(req.params.id)
+      .findById(mongoose.Types.ObjectId(req.params.id))
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
