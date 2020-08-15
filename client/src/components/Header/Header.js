@@ -1,23 +1,56 @@
-import React from "react";
+import React, { Component } from "react";
 import LocButton from "../trackButton/trackButton"
+import "./header.css"
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
 
-function Header(props) {
+class Header extends Component {
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+      };
+    
+    render() {
+        const { user } = this.props.auth;
+    
     return (
+        <>
 
-        <header>
+            <header id="heading">
 
-            <nav className="nav-wrapper indigo darken-4" id="navbar">
+                <nav className="nav-wrapper indigo darken-4" id="navbar">
 
-                <div className="container">
-                    <LocButton className="hide-on-med-and-up" />
-                    <a href="/dashboard" className="flow-text">{props.date.toDateString()}</a>
-                    <a href="">Logout</a>
-                </div>
-            </nav>
+                    <div className="container headingNavbar">
+                        <LocButton />
+                        <a href="/dashboard" className="flow-text" id="dashboardHeaderText">{this.props.date.toDateString()}</a>
+                        <i onClick={this.onLogoutClick} id="loggingOUTid" class="material-icons logoutICON">exit_to_app</i>
 
-        </header>
+                    </div>
+
+
+                </nav>
+
+
+            </header>
+
+        </>
 
     );
 }
+}
+// export default Header;
 
-export default Header;
+Header.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { logoutUser }
+  )(Header);

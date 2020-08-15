@@ -127,20 +127,20 @@ function Form(props) {
                             </p>
                         </Col>
 
-                        <Col s={4} className="input-field offset-s4">
-                            <input placeholder="98.6" id="temp" type="number" className="validate" name="temperature" onChange={handleInputChange} />
+                        <Col s={5} className="input-field offset-s4">
+                            <input id="temp" type="number" className="validate" name="temperature" onChange={handleInputChange} />
                             <label htmlFor="temp">Temperature</label>
                         </Col>
 
                         <Col s={11} className="input-field">
-                            <i className="material-icons prefix">mode_edit</i>
+                            <i className="material-icons prefix" id="pencil">mode_edit</i>
                             <textarea id="comments" className="materialize-textarea" name="comments" onChange={handleInputChange}></textarea>
-                            <label htmlFor="comments">Anything to note?</label>
+                            <label htmlFor="comments">Anything else to note?</label>
                         </Col>
                     
 
                         <Col s={12} className="center submitBTN">
-                            <Button className="red darken-4 submitBtn" type="submit" onClick={handleFormSubmit}>Submit</Button>
+                            <Button className="red darken-4 waves-effect waves-light btn hoverable submitBtn" id="formSubmitButton" type="submit" onClick={handleFormSubmit}>Submit</Button>
                         </Col>
 
                     </Row>
@@ -151,7 +151,7 @@ function Form(props) {
 
                 </form>
 
-                <Button className="hide-on-med-and-down btn-large red darken-4" onClick={props.displayData}>Show Data</Button>
+                <Button className="hide-on-med-and-down btn-large red waves-effect waves-light btn hoverable darken-4" id="showDataButton" onClick={props.displayData}>Show Data</Button>
             </section>
         </div>
     );

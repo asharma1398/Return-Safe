@@ -44,7 +44,7 @@ class Dashboard extends React.Component {
         return (
             <>
                 <Header date={this.state.currentDate} />
-                <main className="container row">
+                <main className="container row mainPageDash">
                     
                     {this.state.showData ? <div id="checkIN"><Checkins displayForm={this.displayForm} currentDate={this.state.currentDate} /> </div> : this.state.showForm ? <div id="checkINForm"><Form displayData={this.displayData} /> </div> : <div></div>}
                     <div><div id="calSpacing" className="hide-on-med-and-down"></div>
