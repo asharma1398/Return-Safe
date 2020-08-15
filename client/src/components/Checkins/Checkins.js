@@ -27,10 +27,12 @@ function Checkins(props) {
 
     return (
         <section className="section center col s12 l6" id="dataResults">
-            <Map currentDate = {props.currentDate}/>
+            <div className="mapOnCheckinPage">
+            <Map currentDate = {props.currentDate} />
+            </div>
             <h3>Check-in</h3>
 
-            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckinButton" className="waves-effect waves-light btn hoverable red darken-4"><span className="left" onClick={props.displayForm}><i className="small material-icons">create</i>&nbsp;Add Check-in</span></Button>}
+            {props.currentDate.toDateString() === new Date().toDateString() && <Button id="addCheckinButton" className="waves-effect waves-light btn hoverable red darken-4"><span className="left" onClick={props.displayForm}><i className="small material-icons left">create</i>&nbsp;Add Check-in</span></Button>}
 
             {checkins.length === 0 ? <section><Icon large className="white-text">coronavirus</Icon></section> : checkins.map(checkin => {
 

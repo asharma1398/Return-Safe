@@ -68,13 +68,15 @@ span::before {
 }
 
 .input-field input[type=number]:focus,
-.input-field textarea:focus,
 .input-field textarea:focus, input.valid[type=number]:not(.browser-default) {
     border-bottom: 2px solid #B71C1C !important;
     box-shadow: none !important;
 }
 
-.input-field input[type=number]:focus:not([readonly]) + label, .input-field textarea:focus:not([readonly]) + label, input.valid[type=number]:not(.browser-default) {
+/* makes the temp number colored (red) */
+.input-field input[type=number]:focus:not([readonly]) + label, 
+.input-field textarea:focus:not([readonly]) + label, 
+input.valid[type=number]:not(.browser-default) {
     color: #B71C1C !important;
 }
 
