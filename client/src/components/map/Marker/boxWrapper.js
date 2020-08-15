@@ -1,7 +1,7 @@
 
 
-const K_WIDTH = 100;
-const K_HEIGHT = 40;
+const K_WIDTH = 200;
+const K_HEIGHT = 80;
 
 const boxWrapStyle = {
 position: 'absolute',
@@ -9,11 +9,12 @@ position: 'absolute',
   height: K_HEIGHT,
   left: -K_WIDTH / 2,
   top: -K_HEIGHT * 1.25,
-  opacity:0.6,
-  backgroundColor: 'black',
+  backgroundColor: '#f2f2f2',
   textAlign: 'center',
   color: '#3f51b5',
-  padding: 4
+  border: '5px solid #cccccc',
+  outline: "1px solid black"
+  
 }
 
 
