@@ -109,12 +109,12 @@ class Login extends Component {
 
             <br />
               <div className="row">
-                <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable red darken-4" id="loginButton">Login</button>
+                <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable" id="loginButton">Login</button>
               </div>
           </form>
         </div>
       </div>
-      <p className="loginText">Don't have an account? <Link to="/register">Register here.</Link></p>
+      <p className="loginText">Don't have an account? <a className="registerLink" href="/register">Register here.</a></p>
       </center>
 </div>
     )         
