@@ -1,7 +1,7 @@
 
 
-const K_WIDTH = 200;
-const K_HEIGHT = 80;
+const K_WIDTH = 160;
+const K_HEIGHT = 70;
 
 const boxWrapStyle = {
 position: 'absolute',

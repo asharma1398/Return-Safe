@@ -13,12 +13,19 @@ function Map(props) {
     const container = useRef();
 
     const Boxy = ({ text }) => <div ref={container} style={boxWrapStyle} >{text}</div>;
-
+    const [zoomin, setZoom] = useState(9)
+    
     useEffect(() => {
 
         document.addEventListener("mouseup", handleClickOutside);
+        
         loadLocations()
-    }, [])
+        if(!center){
+            setCenter([40,-75])
+            setZoom(7)
+        } 
+        
+    }, [props.currentDate])
 
 
     
@@ -27,6 +34,7 @@ function Map(props) {
         
         if (container.current && !container.current.contains(event.target)) {
             setInfoBox("")
+            setZoom(12)
         }
     }
 
@@ -40,6 +48,7 @@ function Map(props) {
     const [center, setCenter] = useState()
 
     const [infoBox, setInfoBox] = useState()
+
     
 
     useEffect(() => {
@@ -51,10 +60,17 @@ function Map(props) {
     
           
     const loadBox = (time, record, lon, lat) => {
-       console.log(time,record, lon, lat)
-        
-           const textBox = (`You were here for ${time} minutes at ${record}.`)
-         
+       var times = record.substr(11, 5)
+       if (parseInt(times.substr(0, 2)) > 12){
+           times = parseInt(times.substr(0, 2))-12 + ":" + times.substr(3, 2) + "pm"
+       } else {times = times + "am"}
+           const textBox = (`You were here for ${time} minutes at ${times}.`)
+           var newCenter = []
+           newCenter.push(lat)
+           newCenter.push(lon)
+           
+           setCenter(newCenter)
+           setZoom(16)
             setInfoBox({text: textBox, long:lon, lati:lat})
     }
 
@@ -101,13 +117,13 @@ function Map(props) {
 
 
     return (
-        // style={{ height: '50vh', width: '85vw' }}
+       
 
         <div className="googleMapLayout">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
                 center = {center}
-                defaultZoom={9}
+                zoom={zoomin}
             >
                 
                 {mapping.map((location) =>
