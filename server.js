@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
+require("dotenv").config();
 
 // Initializes the application using the express dependency.
 const app = express();
