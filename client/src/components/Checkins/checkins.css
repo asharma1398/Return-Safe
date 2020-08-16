@@ -31,9 +31,13 @@
     border-radius: 4px;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 10px;
+    background-color: #7AAC25;
 }
 
 .checkinLogsTitle {
     font-family: "Raleway", sans-serif;
 }
 
+.virusICON {
+    color: #B14E91 !important;
+}
