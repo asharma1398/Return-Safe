@@ -83,6 +83,7 @@ input.valid[type=number]:not(.browser-default) {
 #showDataButton, #formSubmitButton {
     font-family: "Montserrat", sans-serif;
     border-radius: 4px;
+    background-color: #7AAC25;
 }
 
 #pencil {
