@@ -71,7 +71,7 @@ function Map(props) {
            
            setCenter(newCenter)
            setZoom(16)
-            setInfoBox({text: textBox, long:lon, lati:lat})
+           setInfoBox({text: textBox, long:lon, lati:lat})
     }
 
 
@@ -121,7 +121,7 @@ function Map(props) {
 
         <div className="googleMapLayout">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
+                bootstrapURLKeys={{ key: process.env.REACT_APP_KEY }}
                 center = {center}
                 zoom={zoomin}
             >
@@ -129,7 +129,6 @@ function Map(props) {
                 {mapping.map((location) =>
                     
                     <Marker
-                        //  onClick = {() =>loadBox(location._id, location.longitude.$numberDecimal, location.latitude.$numberDecimal, )}
                         onClick = {() =>loadBox(location.time, location.recordedAt, parseFloat(location.longitude.$numberDecimal), parseFloat(location.latitude.$numberDecimal ))}
                          
                         
