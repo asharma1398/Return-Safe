@@ -137,14 +137,14 @@ class Register extends Component {
 
             <br />
             <center>
-              <div className='row'>
-                <button type='submit' name='btn_register' className='col s12 btn btn-large waves-effect waves-light hoverable red darken-4' id="registerButton">Register</button>
+              <div className="row">
+                <button type="submit" name="btn_register" className="col s12 btn btn-large waves-effect waves-light hoverable" id="registerButton">Register</button>
               </div>
             </center>
           </form>
         </div>
       </div>
-      <p className="registerText">Already have an account? <Link to="/login">Log in.</Link></p>
+      <p className="registerText">Already have an account? <a className="loginLink" href="/login">Log in.</a></p>
       </center>
     <div className="section"></div>
     <div className="section"></div>
