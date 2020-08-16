@@ -18,11 +18,11 @@ render() {
               >
               Get Started
         </Link>
+          </div>
         </div>
-        </div>
-  </section>
-  );
- }
+      </section>
+    );
+  }
 };
 
 export default Landing;
