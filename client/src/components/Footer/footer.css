@@ -9,3 +9,7 @@ footer {
 footer .btn-large {
     padding-left: 35px !important;
 }
+
+#dataBtn, #calenderBtn {
+    background-color: #9BB8D8;
+}
