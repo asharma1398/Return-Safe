@@ -14,10 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Database configuration.
-const db = require("./config/keys").MONGODB_URI;
+const db = require("./config/keys");
 
 // MongoDB connection using the mongoose dependency.
-mongoose.connect("mongodb://localhost/covidtracker", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Successfully made connection to MongoDB."))
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covidtracker", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Successfully made connection to MongoDB."))
 .catch(err => console.log(err));
 
 // Passport middleware.
