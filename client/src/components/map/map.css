@@ -9,4 +9,12 @@
     font-size: 24px !important;
     left: -12px !important;
     top: -24px !important;
+    color: black;
+    background-color:rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 50%;
+}
+
+.marker:focus {
+    background-color:rgba(255, 255, 255, 0.5);
 }
