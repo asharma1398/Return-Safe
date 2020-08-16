@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import 'materialize-css';
 import { Switch } from 'react-materialize';
 
+
 function LocButton(props) {
     const { user } = props.auth
     localStorage.setItem("reset", "false");
