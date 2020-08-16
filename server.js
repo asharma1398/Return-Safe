@@ -12,6 +12,10 @@ const app = express();
 // Applies the middleware function.
 app.use(bodyParser.urlencoded({ extended: false }));
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
 app.use(bodyParser.json());
 
 // Database configuration.
