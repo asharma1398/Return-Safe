@@ -9,9 +9,10 @@ class Landing extends Component {
       <section className="intro">
         <div className="inner">
           <div className="content">
-            <h1>Stay Healthy. <b id="appNameText">Return Safe.</b></h1>
-            
+            <h1>Stay Healthy.<br/><b id="appNameText">Return Safe.</b></h1>
+            <div id="landingCatchPhrase">
             <h4>Creating a community of trust will be paramount when adjusting to our new way of life.</h4>
+            </div>
             <Link
               to="/register"
               className="waves-effect waves-light btn hoverable" id="getStartedButton"

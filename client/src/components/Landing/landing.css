@@ -24,9 +24,13 @@ body {
 }
 
 .content {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+#landingCatchPhrase {
+    margin-top: 55px;
 }
 
 .content h1 {
@@ -37,7 +41,8 @@ body {
 }
 
 #appNameText {
-    font-size: 700%;
+    font-size: 110%;
+    margin-top: -90px;
 }
 
 #getStartedButton {
@@ -47,7 +52,8 @@ body {
     padding: 20px;
     height: 100%;
     border-radius: 3px;
-    background-color: #7AAC25;
+    background-color: #B14E91;
+    margin-top: 30px;
 }
 
 .content h4 {
