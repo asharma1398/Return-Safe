@@ -5,20 +5,16 @@
     margin-bottom: 5em;
     border-radius: 8px;
     background: white;
-    /* opacity: 0.9; */
-    /* margin-top: 10px; */
     -moz-box-shadow: 0 0 5px #ccc;
     -webkit-box-shadow: 0 0 5px #ccc;
     box-shadow: 0 0 5px #ccc;
     padding: 10px;
-    /* margin-top: 10px; */
 }
 
 .formItems {
     font-family: "Montserrat", sans-serif;
     display: flex;
     text-align: left;
-    /* margin-left: 15%; */
     width: 85%;
     margin: auto;
 }
@@ -27,8 +23,6 @@
     font-family: "Montserrat", sans-serif;
     display: flex;
     text-align: center;
-    /* margin: auto; */
-    /* margin-left: 2% !important; */
 }
 
 .submitBtn {
@@ -43,8 +37,9 @@ span::before {
     height: 22px;
     border-top: 2px solid #9BB8D8 !important;
     border-left: 2px solid #9BB8D8!important;
-    border-right: 2px solid #9BB8D8 !important; /* You need to change the colour here */
-    border-bottom: 2px solid #9BB8D8 !important; /* And here */}
+    border-right: 2px solid #9BB8D8 !important;
+    border-bottom: 2px solid #9BB8D8 !important;
+}
 
 [type="checkbox"]:checked+span:not(.lever):before {
     border-top: 2px solid transparent !important; 
@@ -67,7 +62,6 @@ span::before {
  color: #9BB8D8 !important;
 }
 
-/* Line color */
 .input-field input[type=number]:focus,
 .input-field textarea:focus, input.valid[type=number]:not(.browser-default) {
     border-bottom: 1px solid #999 !important;
