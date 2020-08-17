@@ -5,7 +5,7 @@ router.route("/")
     .post(checkinController.create)
 
 router.route("/:id")
-    .get(checkinController.find)
+    .get(checkinController.findFever)
     .post(checkinController.create);
 
 router.route("/:id/:lowDate/:highDate")
