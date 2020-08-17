@@ -19,6 +19,7 @@ function Form(props) {
         congestion: false,
         nausea: false,
         diarrhea: false,
+        temperature: "",
         comments: ""
     });
 
@@ -44,13 +45,17 @@ function Form(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault();
+        console.log(checkinForm);
+        if (checkinForm.cough === false && checkinForm.shortnessOfBreath === false && checkinForm.fatigue === false && checkinForm.bodyAche === false && checkinForm.headache === false && checkinForm.senseLoss === false && checkinForm.soreThroat === false && checkinForm.congestion === false && checkinForm.nausea === false && checkinForm.diarrhea === false && checkinForm.temperature === "" && checkinForm.comments === "") {
 
-        API.saveCheckin(user.id, checkinForm)
+        } else {
+            API.saveCheckin(user.id, checkinForm)
             .then(res => {
                 console.log("checkin saved!");
                 props.displayData();
             })
             .catch(err => console.log(err));
+        }
     }
 
     return (
@@ -133,7 +138,7 @@ function Form(props) {
                             <textarea id="comments" className="materialize-textarea" name="comments" onChange={handleInputChange}></textarea>
                             <label htmlFor="comments">Anything else to note?</label>
                         </Col>
-                    
+
 
                         <Col s={12} className="center submitBTN">
                             <Button className="waves-effect waves-light btn hoverable submitBtn" id="formSubmitButton" type="submit" onClick={handleFormSubmit}>Submit</Button>
