@@ -45,13 +45,13 @@ function Form(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        console.log(checkinForm);
+        // console.log(checkinForm);
         if (checkinForm.cough === false && checkinForm.shortnessOfBreath === false && checkinForm.fatigue === false && checkinForm.bodyAche === false && checkinForm.headache === false && checkinForm.senseLoss === false && checkinForm.soreThroat === false && checkinForm.congestion === false && checkinForm.nausea === false && checkinForm.diarrhea === false && checkinForm.temperature === "" && checkinForm.comments === "") {
 
         } else {
             API.saveCheckin(user.id, checkinForm)
             .then(res => {
-                console.log("checkin saved!");
+                // console.log("checkin saved!");
                 props.displayData();
             })
             .catch(err => console.log(err));
