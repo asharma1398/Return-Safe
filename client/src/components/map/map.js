@@ -138,7 +138,7 @@ function Map(props) {
 
         <div className="googleMapLayout">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
+                bootstrapURLKeys={{ key: process.env.REACT_APP_KEY }}
                 center = {center}
                 zoom= {zoomin}
                 
