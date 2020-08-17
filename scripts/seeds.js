@@ -204,7 +204,7 @@ const locationSeed = [
     },
     {
         latitude: 39.95517754,
-        longitude: 75.20046056,
+        longitude: -75.20046056,
         time: 10,
         recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 12)).setHours(10, 00, 00, 000))
     },
