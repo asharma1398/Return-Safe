@@ -12,7 +12,7 @@ function Map(props) {
     const { user } = props.auth
     const container = useRef();
 
-    const Boxy = ({ text }) => <div ref={container} style={boxWrapStyle} >{text}</div>;
+    const Boxy = ({ text }) => <div class = "box" ref={container} style={boxWrapStyle} ><div class="tri bottom"></div>{text}</div>;
     const [zoomin, setZoom] = useState(9)
     
     useEffect(() => {
@@ -33,7 +33,12 @@ function Map(props) {
     const handleClickOutside = event => {
         
         if (container.current && !container.current.contains(event.target)) {
-            setInfoBox("")
+            setInfoBox({
+                text: "",
+        long: 0,
+        lati:0
+
+            })
             setZoom(12)
         }
     }
@@ -47,31 +52,43 @@ function Map(props) {
 
     const [center, setCenter] = useState()
 
-    const [infoBox, setInfoBox] = useState()
+    const [infoBox, setInfoBox] = useState({
+        text: "",
+        long: 0,
+        lati:0
+
+    })
 
     
 
-    useEffect(() => {
-        console.log(infoBox)
-    }, [infoBox])
+    // useEffect(() => {
+    //     console.log(infoBox)
+    // }, [infoBox])
 
     
     
     
           
     const loadBox = (time, record, lon, lat) => {
+      
+        
        var times = record.substr(11, 5)
        if (parseInt(times.substr(0, 2)) > 12){
            times = parseInt(times.substr(0, 2))-12 + ":" + times.substr(3, 2) + "pm"
+           console.log(times)
        } else {times = times + "am"}
-           const textBox = (`You were here for ${time} minutes at ${times}.`)
-           var newCenter = []
-           newCenter.push(lat)
-           newCenter.push(lon)
+
            
-           setCenter(newCenter)
-           setZoom(16)
-           setInfoBox({text: textBox, long:lon, lati:lat})
+         console.log(typeof lon) 
+    setInfoBox({text: `You were here for ${time} minutes at ${times}.`, long:lon, lati:lat})
+        var newCenter = []
+       
+        newCenter.push(lat)
+        newCenter.push(lon)
+        console.log(newCenter)
+        setCenter(newCenter)
+        setZoom(16)
+          
     }
 
 
@@ -121,9 +138,10 @@ function Map(props) {
 
         <div className="googleMapLayout">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: process.env.REACT_APP_KEY }}
+                bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
                 center = {center}
-                zoom={zoomin}
+                zoom= {zoomin}
+                
             >
                 
                 {mapping.map((location) =>
@@ -139,17 +157,19 @@ function Map(props) {
                     />
                 
                     )}
-                   {infoBox ?
+                  {infoBox.text !== "" ?
                  
-                    <Boxy 
-                    
-                    lat = {infoBox.long}
-                    lng = {infoBox.lati}
-                    text = {infoBox.text}
-                      /> : <div></div>
-                   }
+                 <Boxy 
+                  
+                 lat = {infoBox.lati}
+                 lng = {infoBox.long}
+                 text = {infoBox.text}
+                   /> 
+                  : <div></div>
+                }
 
             </GoogleMapReact>
+            
         </div>
     );
 
@@ -168,135 +188,3 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps
 )(Map);
-
-// import React, { useState, useEffect, useRef } from 'react';
-// import GoogleMapReact from 'google-map-react';
-// import Marker from './Marker/markerWrap';
-// import {boxWrapStyle} from './Marker/boxWrapper';
-// // import Marker from "./marker"
-// // import API from '../../utils/API';
-
-// function Map() {
-
-//     const container = useRef();
-
-//     const Boxy = ({ text }) => <div ref={container} style = {boxWrapStyle}>{text}</div>;
-
-//     useEffect(() => {
-
-//         document.addEventListener("mouseup", handleClickOutside);
-
-//             }, [])
-
-
-
-//     const handleClickOutside = event => {
-
-//         if (container.current && !container.current.contains(event.target)) {
-//           setInfoBox("")
-//     }
-//     }
-
-
-
-
-
-
-// //     const [mapping, setLocation] = useState([])
-
-// //     const [center, setCenter] = useState({
-// //         latitudeness: "",
-// //         longitudeness: ""
-// //     })
-
-//     const [infoBox, setInfoBox] = useState({
-//         text: "",
-//         long: 0,
-//         lati: 0
-//     })
-
-
-
-
-// //     useEffect(() => {
-// //         loadLocations()
-// //         loadSpot()
-// //     }, [])
-
-//    function loadBox(id, lon, lat) {
-//     console.log(handleClickOutside)
-//     setInfoBox({text: id, long:lon, lati:lat})
-
-
-//     // API.getBox(id)
-//     // .then(res => {
-//     //   console.log(res)
-
-//     }
-
-// //    }
-
-// //     function loadLocations() {
-
-
-
-// //         API.getLocations(date)
-// //             .then(res => {
-// //                 const latitudeness = (res.latitude.reduce((a, b) => (a + b)) / res.length);
-// //                 const longitudeness = (res.longitude.reduce((a, b) => (a + b)) / res.length);
-
-// //                 setLocation(res),
-// //                 setCenter({longitudeness: longitudeness,  latitudeness: latitudeness})
-
-
-// //             })
-// //             .catch(err => console.log(err))
-// //     };
-
-
-//     return (
-
-//         <div style={{ height: '50vh', width: '50vw' }}>
-//             <GoogleMapReact
-//                 bootstrapURLKeys={{ key: "AIzaSyDpbrCe5t8RSBADdOMb17DP4LVmtV0Zbp4" }}
-//                 defaultCenter = {{
-//                     lat: 22.7,
-//                     lng: 33
-//     }}
-//                 // {center}
-//                 defaultZoom={9}
-//             >
-//                 {/* {mapping.map(location => */}
-
-//                     <Marker
-//                          onClick = {() =>loadBox("This is text that is written in a box right here", 22.3, 33)}
-
-//                         // style = {MarkStyle}
-
-//                         // lat={location.lat}
-//                         // lng={location.lon}
-//                         lat = {22.3}
-//                         lng = {33}
-//                     />
-//                     {/* )} */}
-//                    {infoBox !== "" ?
-
-//                     <Boxy 
-
-//                     lat = {infoBox.long}
-//                     lng = {infoBox.lati}
-//                     text = {infoBox.text}
-//                       /> : <div></div>
-//                    }
-
-//             </GoogleMapReact>
-//         </div>
-//     );
-
-
-
-
-// }
-
-
-// export default Map;
