@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+require("dotenv").config();
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covidtracker", {
     useNewUrlParser: true,
@@ -137,7 +138,7 @@ db.Checkin.deleteMany({})
         console.log(data.result.n + " checkins inserted!");
         console.log(data);
 
-        db.User.findOneAndUpdate({ name: "Susan" }, {
+        db.User.findOneAndUpdate({ name: "romie" }, {
             checkins:
                 [mongoose.Types.ObjectId(data.ops[0]._id),
                 mongoose.Types.ObjectId(data.ops[1]._id),
@@ -224,8 +225,61 @@ const locationSeed = [
         longitude: -75.20099902,
         time: 10,
         recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 10)).setHours(10, 00, 00, 000))
-    }
-    // add more seeds for when sick
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 9)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 8)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 7)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 6)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 5)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 4)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 3)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 2)).setHours(10, 00, 00, 000))
+    },
+    {
+        latitude: 39.95368903,
+        longitude: -75.20099902,
+        time: 10,
+        recordedAt: new Date(new Date(new Date().setDate(new Date().getDate() - 1)).setHours(10, 00, 00, 000))
+    },
 
 ]
 
@@ -234,7 +288,7 @@ db.Geolocation.deleteMany({})
     .then(data => {
         console.log("locations inserted!");
 
-        db.User.findOneAndUpdate({ name: "Susan"}, {
+        db.User.findOneAndUpdate({ name: "romie"}, {
             locations:
             [
                 mongoose.Types.ObjectId(data.ops[0]._id),
@@ -245,7 +299,16 @@ db.Geolocation.deleteMany({})
                 mongoose.Types.ObjectId(data.ops[5]._id),
                 mongoose.Types.ObjectId(data.ops[6]._id),
                 mongoose.Types.ObjectId(data.ops[7]._id),
-                mongoose.Types.ObjectId(data.ops[8]._id)
+                mongoose.Types.ObjectId(data.ops[8]._id),
+                mongoose.Types.ObjectId(data.ops[9]._id),
+                mongoose.Types.ObjectId(data.ops[10]._id),
+                mongoose.Types.ObjectId(data.ops[11]._id),
+                mongoose.Types.ObjectId(data.ops[12]._id),
+                mongoose.Types.ObjectId(data.ops[13]._id),
+                mongoose.Types.ObjectId(data.ops[14]._id),
+                mongoose.Types.ObjectId(data.ops[15]._id),
+                mongoose.Types.ObjectId(data.ops[16]._id),
+                mongoose.Types.ObjectId(data.ops[17]._id)
             ]
         })
         .then(data => {

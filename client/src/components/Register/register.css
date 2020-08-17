@@ -1,13 +1,16 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
 
 #registerBackground {
     display: flex;
     height: 100vh;
     flex-direction: column;
-    /* background-image: url("../../assets/images/blueInkBackground.jpg"); */
     background-repeat: no-repeat;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    
+    background: url("../../assets/images/landing.jpg");
+    height: 100vh;
     background-size: cover;
 }
 
@@ -17,7 +20,6 @@
     background: white;
     border-radius: 8px;
     background: white;
-    /* opacity: 0.95; */
     -moz-box-shadow: 0 0 5px #ccc;
     -webkit-box-shadow: 0 0 5px #ccc;
     padding: 50px 60px 0px 60px !important; 
@@ -28,29 +30,34 @@
 .registerWelcomeText {
     font-family: "Raleway", sans-serif;
     font-size: 16px;
-    color: #B71C1C;
+    color: #7AAC25;
     font-weight: bold;
 }
 
 .registerText {
-    color: #B71C1C;
+    color: #7AAC25;
     font-family: "Montserrat", sans-serif;
 }
 
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
-    color: #B71C1C !important;
+    color: #7AAC25 !important;
 }
 
 .input-field input[type=text]:focus:not([readonly]) + label, .input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label {
-    color: #B71C1C !important;
+    color: #7AAC25 !important;
 }
 
 .input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
-    border-bottom: 2px solid #B71C1C !important;
+    border-bottom: 2px solid #7AAC25 !important;
     box-shadow: none !important;
 }
 
 #registerButton {
     border-radius: 4px;
     font-family: "Montserrat", sans-serif;
+    background-color: #7AAC25;
+}
+
+.loginLink {
+    color: #B14E91;
 }

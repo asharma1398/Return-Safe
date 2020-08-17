@@ -19,12 +19,12 @@ class Header extends Component {
 
             <header id="heading">
 
-                <nav className="nav-wrapper indigo darken-4" id="navbar">
+                <nav className="nav-wrapper" id="navbar">
 
                     <div className="container headingNavbar">
                         <LocButton />
                         <a href="/dashboard" className="flow-text" id="dashboardHeaderText">{this.props.date.toDateString()}</a>
-                        <i onClick={this.onLogoutClick} id="loggingOUTid" class="material-icons logoutICON">exit_to_app</i>
+                        <i onClick={this.onLogoutClick} id="loggingOUTid" class="material-icons white-text logoutICON">exit_to_app</i>
 
                     </div>
 
@@ -39,7 +39,6 @@ class Header extends Component {
     );
 }
 }
-// export default Header;
 
 Header.propTypes = {
     logoutUser: PropTypes.func.isRequired,

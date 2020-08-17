@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./register.css";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
@@ -137,14 +137,15 @@ class Register extends Component {
 
             <br />
             <center>
-              <div className='row'>
-                <button type='submit' name='btn_register' className='col s12 btn btn-large waves-effect waves-light hoverable red darken-4' id="registerButton">Register</button>
+              <div className="row">
+                <button type="submit" name="btn_register" className="col s12 btn btn-large waves-effect waves-light hoverable" id="registerButton">Register</button>
               </div>
+              <p className="registerText">Already have an account? <a className="loginLink" href="/login">Log in.</a></p>
             </center>
           </form>
         </div>
       </div>
-      <p className="registerText">Already have an account? <Link to="/login">Log in.</Link></p>
+      
       </center>
     <div className="section"></div>
     <div className="section"></div>

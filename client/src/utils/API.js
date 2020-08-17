@@ -2,23 +2,26 @@ import axios from "axios";
 
 export default {
 
-    
-    saveLocation: function(id, locationData) {
+
+    saveLocation: function (id, locationData) {
         console.log("id: " + id);
         console.log("location data: ");
         console.log(locationData);
         return axios.post("/api/mapping/" + id, locationData);
-      },
-      getLocations: function(id, lowDate, highDate){
+    },
+    getLocations: function (id, lowDate, highDate) {
         return axios.get(`/api/mapping/${id}/${lowDate}/${highDate}`);
     },
-    getBox: function(id){
+    getBox: function (id) {
         return axios.get("/api/mapping/marker/" + id);
-     },
-    saveCheckin: function(id, checkinData) {
+    },
+    saveCheckin: function (id, checkinData) {
         return axios.post("/api/checkins/" + id, checkinData);
     },
-    find: function(id, lowDate, highDate) {
+    find: function (id, lowDate, highDate) {
         return axios.get(`/api/checkins/${id}/${lowDate}/${highDate}`);
+    },
+    findFever: function (id) {
+        return axios.get(`/api/checkins/${id}`);
     }
 }

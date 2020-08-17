@@ -31,5 +31,17 @@ module.exports = {
                 console.log(user)
                 res.json(user)})
             .catch(err => res.status(422).json(err));
+    },
+    findFever: function (req, res) {
+        db.User
+            .findById(mongoose.Types.ObjectId(req.params.id))
+            .populate({
+                path: "checkins",
+                match: { temperature: { $gte: 100.4 }}
+            })
+            .then(user => {
+                res.json(user)
+            })
+            .catch(err => res.status(422).json(err));
     }
 };

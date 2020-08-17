@@ -1,24 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap");
 
 #navbar {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 #date {
-    font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
 }
 
 #dashboardHeaderText {
-    font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
 }
 
 .headingNavbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .material-icons.logoutICON {
-    font-size: 36px;
-    cursor: pointer;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.nav-wrapper {
+  background-color: #9bb8d8;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #7aac25;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #7aac25;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #7aac25;
+}
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #7aac25;
 }

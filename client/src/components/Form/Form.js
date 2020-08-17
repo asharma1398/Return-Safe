@@ -30,7 +30,6 @@ function Form(props) {
             ...checkinForm,
             [name]: value
         });
-        // console.log(checkinForm);
     }
 
     const handleCheckChange = event => {
@@ -41,13 +40,10 @@ function Form(props) {
             ...checkinForm,
             [name]: checked
         });
-        // console.log(checkinForm);
     }
 
     const handleFormSubmit = event => {
         event.preventDefault();
-
-        // console.log(checkinForm);
 
         API.saveCheckin(user.id, checkinForm)
             .then(res => {
@@ -140,18 +136,14 @@ function Form(props) {
                     
 
                         <Col s={12} className="center submitBTN">
-                            <Button className="red darken-4 waves-effect waves-light btn hoverable submitBtn" id="formSubmitButton" type="submit" onClick={handleFormSubmit}>Submit</Button>
+                            <Button className="waves-effect waves-light btn hoverable submitBtn" id="formSubmitButton" type="submit" onClick={handleFormSubmit}>Submit</Button>
                         </Col>
 
                     </Row>
 
-
-
-
-
                 </form>
 
-                <Button className="hide-on-med-and-down btn-large red waves-effect waves-light btn hoverable darken-4" id="showDataButton" onClick={props.displayData}>Show Data</Button>
+                <Button className="hide-on-med-and-down btn-large waves-effect waves-light btn hoverable" id="showDataButton" onClick={props.displayData}>Show Data</Button>
             </section>
         </div>
     );

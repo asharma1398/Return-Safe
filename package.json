@@ -1,7 +1,7 @@
 {
-  "name": "spotcheck",
+  "name": "returnSafe",
   "version": "1.0.0",
-  "description": "",
+  "description": "A contact tracing web application that tracks user’s locations and allows them to conduct daily symptom check ins.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
