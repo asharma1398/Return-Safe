@@ -10,8 +10,9 @@
     -webkit-box-shadow: 0 0 5px #ccc;
     padding: 50px 60px 0px 60px !important; 
     box-shadow: 0 0 5px #ccc;
-    margin-top: 30px;
+    margin-top: 10%;
 }
+
 
 .loginWelcomeText {
     font-family: "Raleway", sans-serif;
@@ -52,4 +53,12 @@
 
 .registerLink {
     color: #B14E91;
+}
+
+@media (max-width: 400px) {
+    .z-depth-1.white.row {
+        margin-top: 10px !important;
+        padding: 10px 10px 10px 10px !important;
+        margin-bottom: 0px !important;
+    }
 }
