@@ -67,16 +67,14 @@ span::before {
  color: #9BB8D8 !important;
 }
 
+/* Line color */
 .input-field input[type=number]:focus,
 .input-field textarea:focus, input.valid[type=number]:not(.browser-default) {
-    border-bottom: 2px solid #9BB8D8 !important;
+    border-bottom: 1px solid #999 !important;
     box-shadow: none !important;
 }
 
-/* makes the temp number colored (red) */
-.input-field input[type=number]:focus:not([readonly]) + label, 
-.input-field textarea:focus:not([readonly]) + label, 
-input.valid[type=number]:not(.browser-default) {
+.input-field input[type=number]:focus:not([readonly]) + label, .input-field textarea:focus:not([readonly]) + label {
     color: #9BB8D8 !important;
 }
 
