@@ -12,7 +12,6 @@ class Header extends Component {
       };
     
     render() {
-        const { user } = this.props.auth;
     
     return (
         <>
@@ -24,7 +23,7 @@ class Header extends Component {
                     <div className="container headingNavbar">
                         <LocButton />
                         <a href="/dashboard" className="flow-text" id="dashboardHeaderText">{this.props.date.toDateString()}</a>
-                        <i onClick={this.onLogoutClick} id="loggingOUTid" class="material-icons white-text logoutICON">exit_to_app</i>
+                        <i onClick={this.onLogoutClick} id="loggingOUTid" className="material-icons white-text logoutICON">exit_to_app</i>
 
                     </div>
 
