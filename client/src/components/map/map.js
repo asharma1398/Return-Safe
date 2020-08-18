@@ -39,7 +39,7 @@ function Map(props) {
         lati:0
 
             })
-            setZoom(12)
+            setZoom(16)
         }
     }
 
@@ -87,7 +87,7 @@ function Map(props) {
         newCenter.push(lon)
         console.log(newCenter)
         setCenter(newCenter)
-        setZoom(16)
+        setZoom(19)
           
     }
 

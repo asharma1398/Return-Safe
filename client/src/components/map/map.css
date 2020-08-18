@@ -22,7 +22,7 @@
     background: black;
     padding: 6px; 
     color: white;
-    opacity: 85%;
+   
 
     }
 .box .tri {
@@ -37,14 +37,7 @@
         left: 62px
     }
 
-/* {
-    border-radius: 10px;
-    background: black;
-    padding: 6px; 
-    color: white;
-    opacity: 85%;
 
-} */
 
 .marker:focus {
     background-color:rgba(255, 255, 255, 0.5);
