@@ -54,7 +54,12 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
+<<<<<<< HEAD
       <div id="background">
+=======
+      <div id="backgroundLOGIN">
+        
+>>>>>>> f6177c648b1073e83f9c869d10b7c03881604bd9
         <center id="center">
           <div className="container">
             <div className="z-depth-1 white row">
@@ -110,10 +115,18 @@ class Login extends Component {
                 <div className="row">
                   <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable" id="loginButton">Login</button>
                 </div>
+<<<<<<< HEAD
               </form>
             </div>
           </div>
           <p className="loginText">Don't have an account? <a className="registerLink" href="/register">Register here.</a></p>
+=======
+                <p className="loginText">Don't have an account? <a className="registerLink" href="/register">Register here.</a></p>
+              </form>
+            </div>
+          </div>
+          
+>>>>>>> f6177c648b1073e83f9c869d10b7c03881604bd9
         </center>
       </div>
     )
