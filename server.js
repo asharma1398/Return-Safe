@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
+require("dotenv").config();
 
 // Initializes the application using the express dependency.
 const app = express();
@@ -11,13 +12,17 @@ const app = express();
 // Applies the middleware function.
 app.use(bodyParser.urlencoded({ extended: false }));
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
 app.use(bodyParser.json());
 
 // Database configuration.
-const db = require("./config/keys").MONGODB_URI;
+const db = require("./config/keys");
 
 // MongoDB connection using the mongoose dependency.
-mongoose.connect("mongodb://localhost/covidtracker", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Successfully made connection to MongoDB."))
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covidtracker", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Successfully made connection to MongoDB."))
 .catch(err => console.log(err));
 
 // Passport middleware.

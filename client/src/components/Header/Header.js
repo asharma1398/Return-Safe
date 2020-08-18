@@ -39,7 +39,6 @@ class Header extends Component {
     );
 }
 }
-// export default Header;
 
 Header.propTypes = {
     logoutUser: PropTypes.func.isRequired,

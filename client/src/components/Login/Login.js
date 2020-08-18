@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
@@ -55,69 +54,69 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-        <div id="background">
+      <div id="background">
         <center id="center">
-      <div className="container">
-        <div className="z-depth-1 white row">
+          <div className="container">
+            <div className="z-depth-1 white row">
 
-          <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
-            <div className="row">
-              <div className="col s12">
-              <span className="loginWelcomeText">Hello, again! Please log in.</span>
-              </div>
+              <form noValidate onSubmit={this.onSubmit} className="col s12" id="login" method="post">
+                <div className="row">
+                  <div className="col s12">
+                    <span className="loginWelcomeText">Hello, again! Please log in.</span>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="input-field col s12">
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.email}
+                      error={errors.email}
+                      id="email"
+                      type="email"
+                      className={classnames("", {
+                        invalid: errors.email || errors.emailnotfound
+                      })}
+                    />
+                    <label htmlFor="email">Email</label>
+                    <span className="red-text">
+                      {errors.email}
+                      {errors.emailnotfound}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="input-field col s12">
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.password}
+                      error={errors.password}
+                      id="password"
+                      type="password"
+                      className={classnames("", {
+                        invalid: errors.password || errors.passwordincorrect
+                      })}
+                    />
+                    <label htmlFor="password">Password</label>
+                    <span className="red-text">
+                      {errors.password}
+                      {errors.passwordincorrect}
+                    </span>
+                  </div>
+                </div>
+
+                <br />
+                <div className="row">
+                  <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable" id="loginButton">Login</button>
+                </div>
+              </form>
             </div>
-
-            <div className="row">
-              <div className="input-field col s12">
-              <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="input-field col s12">
-              <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
-                />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
-                </span>
-              </div>
-            </div>
-
-            <br />
-              <div className="row">
-                <button type="submit" name="btn_login" className="col s12 btn-large waves-effect waves-light btn hoverable red darken-4" id="loginButton">Login</button>
-              </div>
-          </form>
-        </div>
+          </div>
+          <p className="loginText">Don't have an account? <a className="registerLink" href="/register">Register here.</a></p>
+        </center>
       </div>
-      <p className="loginText">Don't have an account? <Link to="/register">Register here.</Link></p>
-      </center>
-</div>
-    )         
+    )
   }
 }
 

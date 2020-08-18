@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+require("dotenv").config();
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covidtracker", {
     useNewUrlParser: true,
@@ -137,7 +138,7 @@ db.Checkin.deleteMany({})
         console.log(data.result.n + " checkins inserted!");
         console.log(data);
 
-        db.User.findOneAndUpdate({ name: "Susan" }, {
+        db.User.findOneAndUpdate({ name: "romie" }, {
             checkins:
                 [mongoose.Types.ObjectId(data.ops[0]._id),
                 mongoose.Types.ObjectId(data.ops[1]._id),
@@ -234,7 +235,7 @@ db.Geolocation.deleteMany({})
     .then(data => {
         console.log("locations inserted!");
 
-        db.User.findOneAndUpdate({ name: "Susan"}, {
+        db.User.findOneAndUpdate({ name: "romie"}, {
             locations:
             [
                 mongoose.Types.ObjectId(data.ops[0]._id),

@@ -41,10 +41,10 @@ span::before {
     left: -3px;
     width: 12px;
     height: 22px;
-    border-top: 2px solid #B71C1C !important;
-    border-left: 2px solid #B71C1C !important;
-    border-right: 2px solid #B71C1C !important; /* You need to change the colour here */
-    border-bottom: 2px solid #B71C1C !important; /* And here */}
+    border-top: 2px solid #9BB8D8 !important;
+    border-left: 2px solid #9BB8D8!important;
+    border-right: 2px solid #9BB8D8 !important; /* You need to change the colour here */
+    border-bottom: 2px solid #9BB8D8 !important; /* And here */}
 
 [type="checkbox"]:checked+span:not(.lever):before {
     border-top: 2px solid transparent !important; 
@@ -64,12 +64,12 @@ span::before {
 
 .input-field input[type=number]:focus + label,
 .input-field textarea:focus + label {
- color: #B71C1C !important;
+ color: #9BB8D8 !important;
 }
 
 .input-field input[type=number]:focus,
 .input-field textarea:focus, input.valid[type=number]:not(.browser-default) {
-    border-bottom: 2px solid #B71C1C !important;
+    border-bottom: 2px solid #9BB8D8 !important;
     box-shadow: none !important;
 }
 
@@ -77,14 +77,15 @@ span::before {
 .input-field input[type=number]:focus:not([readonly]) + label, 
 .input-field textarea:focus:not([readonly]) + label, 
 input.valid[type=number]:not(.browser-default) {
-    color: #B71C1C !important;
+    color: #9BB8D8 !important;
 }
 
 #showDataButton, #formSubmitButton {
     font-family: "Montserrat", sans-serif;
     border-radius: 4px;
+    background-color: #7AAC25;
 }
 
 #pencil {
-    color: #B71C1C;
+    color: #9BB8D8;
 }
