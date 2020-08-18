@@ -6,7 +6,6 @@ import API from '../../utils/API';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./map.css";
-import { AutoInit } from 'materialize-css';
 
 function Map(props) {
     const { user } = props.auth
