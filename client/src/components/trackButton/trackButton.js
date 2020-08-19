@@ -27,7 +27,7 @@ const changeState = () => {
     useEffect(() => {
         if (onOff) {
             const interval = setTimeout(() => {
-                if (localStorage.getItem("reset") == "false") {
+                if (localStorage.getItem("reset") === "false") {
                 setTime(time + 1)
                 localStorage.setItem("dur", JSON.stringify(time));
                 } else {

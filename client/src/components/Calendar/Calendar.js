@@ -14,7 +14,7 @@ function Calendar(props) {
     useEffect(() => {
         API.findFever(user.id)
             .then(res => {
-                console.log(res.data.checkins);
+                // console.log(res.data.checkins);
                 setFevers(res.data.checkins);
             })
             .catch(err => console.log(err));

@@ -6,7 +6,6 @@ import API from '../../utils/API';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./map.css";
-import { AutoInit } from 'materialize-css';
 
 function Map(props) {
     const { user } = props.auth
@@ -39,7 +38,7 @@ function Map(props) {
         lati:0
 
             })
-            setZoom(12)
+            setZoom(16)
         }
     }
 
@@ -87,7 +86,7 @@ function Map(props) {
         newCenter.push(lon)
         console.log(newCenter)
         setCenter(newCenter)
-        setZoom(16)
+        setZoom(19)
           
     }
 
