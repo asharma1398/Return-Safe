@@ -16,9 +16,9 @@
 
 ## Description
 
-In order to relax social-distancing measures - like school closures and "stay at home" orders - our public health officials need a way to intensify their contact-tracing efforts. Contact tracing, which entails identifying people who have an infectious disease (and the people they may have been exposed to) and working with them to interrupt disease transmission. For COVID-19, this includes asking cases to isolate and contacts to quarantine at home voluntarily. alert people when they may have been exposed to the infection, and thus reduce contagion rates.
+In order to relax social-distancing measures - like school closures and "stay at home" orders - our public health officials need a way to intensify their contact-tracing efforts. Contact tracing, which entails identifying people who have an infectious disease and those they have been in contact with, works to interrupt disease transmission, but, unfortunately, there is still much concern about the preventative measures being taken to avoid transmission.
 
-Return Safe is a contact-tracing application that does just that: preventing the spread of disease and transmission through a user's self-report of symptoms, geolocation tracking to notify the user of their whereabouts (monitoring where/who the user has been in contact with, from what distance, and for how long), and estimating the probability of contagion based on their interaction in their community.
+Due to this high level of concern, especially of community members contracting the virus, our team created Return Safe, a contact-tracing application. Return Safe works to put the user's mind at ease by preventing the spread of disease and transmission through a user's self-report of symptoms, using geolocation tracking to notify the user of their whereabouts (monitoring where/who the user has been in contact with, from what distance, and for how long), and by estimating the probability of contagion based on their interaction in their community.
 
 Return Safe is a MERN-stack, Single Page Application (SPA) that utilizes Passport and JWT for encrypted user authentication, Redux to manage the application state of the user interface, react-calendar as a form component to select and navigate between dates, and the Geolocation API to track and return the user's location based on cell phone towers and WiFi nodes.
 
@@ -35,13 +35,28 @@ GIVEN a contact tracing application
 WHEN I sign in and load the page
 THEN a dashboard will render with a check-in form and a dynamic calendar.
 
-WHEN  
-THEN
+WHEN I fill out a check-in form with my self-reported symptoms and observations and click the Submit button  
+THEN I will have saved my form and will be able to view the data.  
+
+WHEN I click on the Data or Show Data button
+THEN I will access the check-in logs with the times of my check-ins and my reported symptoms for the current day.  
+
+WHEN I click on the Calendar or Calendar button
+THEN I will access my check-in logs, see reported symptoms, and see the pin(s) for my location for that selected day.  
+
+WHEN I click on the toggle button on the header
+THEN I will enable a geolocation tracker that will record my location when I have been in a location for more than ten minutes.  
 ~~~
 
 ## Preview of Return Safe
 
 ![Return Safe Landing Page](assets/images/returnSafeLandingPage.png)
+
+The following images display the login and registration components for the user:
+
+![Return Safe Register Page](assets/images/returnSafeRegisterPage.png)
+
+![Return Safe Login Page](assets/images/returnSafeLoginPage.png)
 
 The following animation demonstrates the complete application functionality:
 
