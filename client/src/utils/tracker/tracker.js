@@ -24,6 +24,7 @@ export default{
     // if (Math.abs(lon - oldLon_id) >  (.0000898 / Math.cos(lat)) || Math.abs(lat - oldLat_id) >  (.0000895 / Math.sin(90 - lon))) {
         var duration = JSON.parse(localStorage.getItem("dur"));
         if (duration >= 10) {
+           
             const location = 
                 {
                   latitude: lat.toString(),
